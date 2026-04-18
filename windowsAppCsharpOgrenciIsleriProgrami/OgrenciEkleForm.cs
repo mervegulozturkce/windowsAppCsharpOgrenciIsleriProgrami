@@ -21,9 +21,9 @@ namespace windowsAppCsharpOgrenciIsleriProgrami
 
         public void add()
         {
-            contact = new SqlConnection(@"Server=MERVEGUL\SQL_2025_STD_DEV; Initial Catalog=Ogrenci; Integrated Security=True; TrustServerCertificate=True;");
-            string data = "Insert into Ogrenci (Name,Surname,Age,Hometown,StudentId) values (@Name,@Surname,@Age,@Hometown,@StudentId)";
-            command = new SqlCommand(data, contact);
+            contact = DataLayer.GetSqlConnection();
+            string sql = "Insert into Ogrenci (Name,Surname,Age,Hometown,StudentId) values (@Name,@Surname,@Age,@Hometown,@StudentId)";
+            command = new SqlCommand(sql, contact);
             command.Parameters.AddWithValue("@Name", textBox2.Text);
             command.Parameters.AddWithValue("@Surname", textBox3.Text);
             command.Parameters.AddWithValue("@Age", textBox4.Text);
@@ -43,9 +43,9 @@ namespace windowsAppCsharpOgrenciIsleriProgrami
         {
             add();
 
-            contact = new SqlConnection(@"Server=MERVEGUL\SQL_2025_STD_DEV; Initial Catalog=Ogrenci; Integrated Security=True; TrustServerCertificate=True;");
-            string data = "Select * from Ogrenci";
-            adapter = new SqlDataAdapter(data, contact);
+            contact = DataLayer.GetSqlConnection();
+            string sql = "Select * from Ogrenci";
+            adapter = new SqlDataAdapter(sql, contact);
 
             DataTable dataTable = new DataTable();
             adapter.Fill(dataTable);

@@ -37,9 +37,9 @@
             textBox1 = new TextBox();
             textBox2 = new TextBox();
             textBox3 = new TextBox();
-            textBox4 = new TextBox();
             textBox5 = new TextBox();
             button1 = new Button();
+            textBox4 = new TextBox();
             SuspendLayout();
             // 
             // label1
@@ -117,13 +117,6 @@
             textBox3.Size = new Size(200, 27);
             textBox3.TabIndex = 13;
             // 
-            // textBox4
-            // 
-            textBox4.Location = new Point(27, 280);
-            textBox4.Name = "textBox4";
-            textBox4.Size = new Size(200, 27);
-            textBox4.TabIndex = 14;
-            // 
             // textBox5
             // 
             textBox5.Location = new Point(27, 348);
@@ -141,14 +134,21 @@
             button1.UseVisualStyleBackColor = true;
             button1.Click += button1_Click;
             // 
+            // textBox4
+            // 
+            textBox4.Location = new Point(27, 280);
+            textBox4.Name = "textBox4";
+            textBox4.Size = new Size(200, 27);
+            textBox4.TabIndex = 17;
+            // 
             // OgrenciEkleForm
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(802, 453);
+            Controls.Add(textBox4);
             Controls.Add(button1);
             Controls.Add(textBox5);
-            Controls.Add(textBox4);
             Controls.Add(textBox3);
             Controls.Add(textBox2);
             Controls.Add(textBox1);
@@ -174,8 +174,8 @@
         private TextBox textBox1;
         private TextBox textBox2;
         private TextBox textBox3;
-        private TextBox textBox4;
         private TextBox textBox5;
         private Button button1;
+        private TextBox textBox4;
     }
 }

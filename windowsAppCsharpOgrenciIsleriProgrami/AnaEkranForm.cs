@@ -7,14 +7,17 @@ namespace windowsAppCsharpOgrenciIsleriProgrami
 {
     public partial class AnaEkranForm : Form
     {
-
         SqlConnection contact;
         SqlCommand command;
         SqlDataAdapter adapter;
+        public AnaEkranForm()
+        {
+            InitializeComponent();
+        }
 
         public void list()
         {
-            contact = new SqlConnection(@"Server=MERVEGUL\SQL_2025_STD_DEV; Initial Catalog=Ogrenci; Integrated Security=True; TrustServerCertificate=True;");
+            contact = DataLayer.GetSqlConnection();
             string data = "SELECT * FROM Ogrenci ";
 
             SqlCommand command = new SqlCommand(data, contact);
@@ -24,13 +27,8 @@ namespace windowsAppCsharpOgrenciIsleriProgrami
 
             adapter.Fill(dataTable);
             dataGridView1.DataSource = dataTable;
+        }        
 
-        }
-
-        public AnaEkranForm()
-        {
-            InitializeComponent();
-        }
         public void button1_Click(object sender, EventArgs e)
         {
             OgrenciEkleForm form2 = new OgrenciEkleForm();
@@ -39,8 +37,13 @@ namespace windowsAppCsharpOgrenciIsleriProgrami
 
         private void button2_Click(object sender, EventArgs e)
         {
-            OgrenciGoruntuleForm form3 = new OgrenciGoruntuleForm();
-            form3.ShowDialog();
+            if (dataGridView1.CurrentRow!=null)
+            {
+                int ogrenciId = (int)dataGridView1.CurrentRow.Cells["Id"].Value;
+               
+                OgrenciGoruntuleForm form3 = new OgrenciGoruntuleForm(ogrenciId);
+                form3.ShowDialog();
+            }                                 
         }
 
         private void AnaEkranForm_Load(object sender, EventArgs e)

@@ -17,65 +17,60 @@ namespace windowsAppCsharpOgrenciIsleriProgrami
         SqlConnection contact;
         SqlCommand command;
         SqlDataAdapter adapter;
-
-        public void list(object entrance)
-        {
-            contact = new SqlConnection(@"Server=MERVEGUL\SQL_2025_STD_DEV; Initial Catalog=Ogrenci; Integrated Security=True; TrustServerCertificate=True;");
-            string data = "Select * from Ogrenci where " +
-                "StudentId LIKE @entrance OR " +
-                "Name LIKE @entrance OR " +
-                "Surname LIKE @entrance OR " +
-               "Age LIKE @entrance OR " +
-                "Hometown LIKE @entrance ";
-
-            SqlCommand command = new SqlCommand(data, contact);
-            command.Parameters.AddWithValue("@entrance", "%" + entrance + "%");
-
-            adapter = new SqlDataAdapter(command);
-            DataTable dataTable = new DataTable();
-
-            adapter.Fill(dataTable);
-            dataGridView1.DataSource = dataTable;
-
-        }
-        public OgrenciGoruntuleForm()
-        {
+        int ogrenciId;
+        public OgrenciGoruntuleForm(int _ogrenciId)
+        {                
             InitializeComponent();
+            contact = DataLayer.GetSqlConnection();
+            ogrenciId = _ogrenciId;
+            list(ogrenciId);
         }
 
-        private void OgrenciGoruntuleForm_Load(object sender, EventArgs e)
+        public void list(int ogrenciId)
         {
-            list(1);
-        }
+            string sql = "Select Name,Surname,Age,Hometown,StudentId from Ogrenci where Id=@ogrenciId ";
 
-        private void textBox1_TextChanged(object sender, EventArgs e)
-        {
-            object entrance = textBox1.Text;
-            list(entrance);
+            using (SqlCommand command = new SqlCommand(sql, contact))
+            {
+                command.Parameters.AddWithValue("@ogrenciId", ogrenciId);
+                adapter = new SqlDataAdapter(command);
+                DataTable dataTable = new DataTable();
+                contact.Open();
+                adapter.Fill(dataTable);
+                contact.Close();
+
+                if (dataTable.Rows.Count > 0)
+                {
+                    DataRow row = dataTable.Rows[0];
+                    textBox8.Text = row["Name"].ToString();
+                    textBox3.Text = row["Surname"].ToString();
+                    textBox6.Text = row["Age"].ToString();
+                    textBox5.Text = row["Hometown"].ToString();
+                    textBox2.Text = row["StudentId"].ToString();
+                }
+            }
         }
 
         private void button2_Click(object sender, EventArgs e)
         {
-            contact = new SqlConnection(@"Server=MERVEGUL\SQL_2025_STD_DEV; Initial Catalog=Ogrenci; Integrated Security=True; TrustServerCertificate=True;");
-            string data = "DELETE FROM Ogrenci WHERE Id=@Id";
-
-            SqlCommand command = new SqlCommand(data, contact);
-            command.Parameters.AddWithValue("@Id", int.Parse(textBox4.Text));
+            MessageBox.Show("tıklnan id:"+ ogrenciId);
+            
+            string sql = "DELETE FROM Ogrenci WHERE Id=@ogrenciId";
+            
+            SqlCommand command = new SqlCommand(sql, contact);
+            command.Parameters.AddWithValue("@ogrenciId",ogrenciId);
 
             contact.Open();
-            command.ExecuteNonQuery();
             contact.Close();
             MessageBox.Show("İlgili öğrenci siliniyor...");
-            list(1);
-
         }
 
         private void button1_Click(object sender, EventArgs e)
-        {
-            contact = new SqlConnection(@"Server=MERVEGUL\SQL_2025_STD_DEV; Initial Catalog=Ogrenci; Integrated Security=True; TrustServerCertificate=True;");
-            string data = "UPDATE Ogrenci SET Name=@Name, Surname=@Surname, Age=@Age, Hometown=@Hometown, StudentId=@StudentId WHERE Id=@Id";
-            SqlCommand command = new SqlCommand(data, contact);
-            command.Parameters.AddWithValue("@Id", int.Parse(textBox4.Text));
+        {            
+            string sql = "UPDATE Ogrenci SET Name=@Name, Surname=@Surname, Age=@Age, Hometown=@Hometown, StudentId=@StudentId WHERE Id=@ogrenciId";
+            SqlCommand command = new SqlCommand(sql, contact);
+
+            command.Parameters.AddWithValue("@ogrenciId", ogrenciId);
             command.Parameters.AddWithValue("@Name", textBox8.Text);
             command.Parameters.AddWithValue("@Surname", textBox3.Text);
             command.Parameters.AddWithValue("@Age", int.Parse(textBox6.Text));
@@ -86,8 +81,6 @@ namespace windowsAppCsharpOgrenciIsleriProgrami
             command.ExecuteNonQuery();
             contact.Close();
             MessageBox.Show("İlgili öğrenci güncelleniyor...");
-            list(1);
-
         }
     }
 }
