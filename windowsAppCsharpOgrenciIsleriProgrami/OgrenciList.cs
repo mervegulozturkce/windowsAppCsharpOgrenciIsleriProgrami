@@ -26,7 +26,7 @@ namespace windowsAppCsharpOgrenciIsleriProgrami
             DataTable dataTable = new DataTable();
 
             adapter.Fill(dataTable);
-            dataGridView1.DataSource = dataTable;
+            studentList.DataSource = dataTable;
         }
 
         public void button1_Click(object sender, EventArgs e)
@@ -37,9 +37,9 @@ namespace windowsAppCsharpOgrenciIsleriProgrami
 
         private void button2_Click(object sender, EventArgs e)
         {
-            if (dataGridView1.CurrentRow != null)
+            if (studentList.CurrentRow != null)
             {
-                int ogrenciId = (int)dataGridView1.CurrentRow.Cells["Id"].Value;
+                int ogrenciId = (int)studentList.CurrentRow.Cells["Id"].Value;
 
                 OgrenciGoruntuleForm form3 = new OgrenciGoruntuleForm(ogrenciId);
                 form3.ShowDialog();

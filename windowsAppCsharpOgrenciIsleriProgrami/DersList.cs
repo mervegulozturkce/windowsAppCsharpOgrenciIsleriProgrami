@@ -84,6 +84,3 @@ namespace windowsAppCsharpOgrenciIsleriProgrami
         }
     }
 }
-
-//dersliste yaptığıumızı öğrenciliste de yap
-//columları ayarla öğrencilitte

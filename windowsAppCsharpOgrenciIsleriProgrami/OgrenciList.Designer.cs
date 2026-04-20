@@ -33,9 +33,15 @@
             button3 = new Button();
             button2 = new Button();
             button1 = new Button();
-            dataGridView1 = new DataGridView();
+            studentList = new DataGridView();
+            studentList_Id = new DataGridViewTextBoxColumn();
+            studentList_Name = new DataGridViewTextBoxColumn();
+            studentList_Surname = new DataGridViewTextBoxColumn();
+            studentList_Age = new DataGridViewTextBoxColumn();
+            studentList_Hometown = new DataGridViewTextBoxColumn();
+            studentList_StudentId = new DataGridViewTextBoxColumn();
             panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)studentList).BeginInit();
             SuspendLayout();
             // 
             // panel1
@@ -47,7 +53,7 @@
             panel1.Dock = DockStyle.Top;
             panel1.Location = new Point(0, 0);
             panel1.Name = "panel1";
-            panel1.Size = new Size(710, 62);
+            panel1.Size = new Size(915, 62);
             panel1.TabIndex = 9;
             // 
             // button4
@@ -90,31 +96,86 @@
             button1.UseVisualStyleBackColor = true;
             button1.Click += button1_Click;
             // 
-            // dataGridView1
+            // studentList
             // 
-            dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.Dock = DockStyle.Left;
-            dataGridView1.Location = new Point(0, 62);
-            dataGridView1.MultiSelect = false;
-            dataGridView1.Name = "dataGridView1";
-            dataGridView1.ReadOnly = true;
-            dataGridView1.RowHeadersWidth = 51;
-            dataGridView1.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            dataGridView1.Size = new Size(708, 278);
-            dataGridView1.TabIndex = 10;
+            studentList.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            studentList.Columns.AddRange(new DataGridViewColumn[] { studentList_Id, studentList_Name, studentList_Surname, studentList_Age, studentList_Hometown, studentList_StudentId });
+            studentList.Dock = DockStyle.Left;
+            studentList.Location = new Point(0, 62);
+            studentList.MultiSelect = false;
+            studentList.Name = "studentList";
+            studentList.ReadOnly = true;
+            studentList.RowHeadersWidth = 51;
+            studentList.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            studentList.Size = new Size(805, 278);
+            studentList.TabIndex = 10;
+            // 
+            // studentList_Id
+            // 
+            studentList_Id.DataPropertyName = "Id";
+            studentList_Id.HeaderText = "Id";
+            studentList_Id.MinimumWidth = 6;
+            studentList_Id.Name = "studentList_Id";
+            studentList_Id.ReadOnly = true;
+            studentList_Id.Width = 125;
+            // 
+            // studentList_Name
+            // 
+            studentList_Name.DataPropertyName = "Name";
+            studentList_Name.HeaderText = "Ad";
+            studentList_Name.MinimumWidth = 6;
+            studentList_Name.Name = "studentList_Name";
+            studentList_Name.ReadOnly = true;
+            studentList_Name.Width = 125;
+            // 
+            // studentList_Surname
+            // 
+            studentList_Surname.DataPropertyName = "Surname";
+            studentList_Surname.HeaderText = "Soyad";
+            studentList_Surname.MinimumWidth = 6;
+            studentList_Surname.Name = "studentList_Surname";
+            studentList_Surname.ReadOnly = true;
+            studentList_Surname.Width = 125;
+            // 
+            // studentList_Age
+            // 
+            studentList_Age.DataPropertyName = "Age";
+            studentList_Age.HeaderText = "Yaş";
+            studentList_Age.MinimumWidth = 6;
+            studentList_Age.Name = "studentList_Age";
+            studentList_Age.ReadOnly = true;
+            studentList_Age.Width = 125;
+            // 
+            // studentList_Hometown
+            // 
+            studentList_Hometown.DataPropertyName = "Hometown";
+            studentList_Hometown.HeaderText = "Memleket";
+            studentList_Hometown.MinimumWidth = 6;
+            studentList_Hometown.Name = "studentList_Hometown";
+            studentList_Hometown.ReadOnly = true;
+            studentList_Hometown.Width = 125;
+            // 
+            // studentList_StudentId
+            // 
+            studentList_StudentId.DataPropertyName = "StudentId";
+            studentList_StudentId.HeaderText = "Öğrenci Numarası";
+            studentList_StudentId.MinimumWidth = 6;
+            studentList_StudentId.Name = "studentList_StudentId";
+            studentList_StudentId.ReadOnly = true;
+            studentList_StudentId.Width = 125;
             // 
             // OgrenciList
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(710, 340);
-            Controls.Add(dataGridView1);
+            ClientSize = new Size(915, 340);
+            Controls.Add(studentList);
             Controls.Add(panel1);
             Name = "OgrenciList";
             Text = "Form1";
             Load += AnaEkranForm_Load;
             panel1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
+            ((System.ComponentModel.ISupportInitialize)studentList).EndInit();
             ResumeLayout(false);
         }
 
@@ -125,6 +186,12 @@
         private Button button3;
         private Button button2;
         private Button button1;
-        private DataGridView dataGridView1;
+        private DataGridView studentList;
+        private DataGridViewTextBoxColumn studentList_Id;
+        private DataGridViewTextBoxColumn studentList_Name;
+        private DataGridViewTextBoxColumn studentList_Surname;
+        private DataGridViewTextBoxColumn studentList_Age;
+        private DataGridViewTextBoxColumn studentList_Hometown;
+        private DataGridViewTextBoxColumn studentList_StudentId;
     }
 }
