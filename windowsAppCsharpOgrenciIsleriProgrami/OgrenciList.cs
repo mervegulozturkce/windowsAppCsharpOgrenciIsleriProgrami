@@ -5,12 +5,12 @@ using System.Windows.Forms;
 
 namespace windowsAppCsharpOgrenciIsleriProgrami
 {
-    public partial class AnaEkranForm : Form
+    public partial class OgrenciList : Form
     {
         SqlConnection contact;
         SqlCommand command;
         SqlDataAdapter adapter;
-        public AnaEkranForm()
+        public OgrenciList()
         {
             InitializeComponent();
         }
@@ -27,7 +27,7 @@ namespace windowsAppCsharpOgrenciIsleriProgrami
 
             adapter.Fill(dataTable);
             dataGridView1.DataSource = dataTable;
-        }        
+        }
 
         public void button1_Click(object sender, EventArgs e)
         {
@@ -37,13 +37,13 @@ namespace windowsAppCsharpOgrenciIsleriProgrami
 
         private void button2_Click(object sender, EventArgs e)
         {
-            if (dataGridView1.CurrentRow!=null)
+            if (dataGridView1.CurrentRow != null)
             {
                 int ogrenciId = (int)dataGridView1.CurrentRow.Cells["Id"].Value;
-               
+
                 OgrenciGoruntuleForm form3 = new OgrenciGoruntuleForm(ogrenciId);
                 form3.ShowDialog();
-            }                                 
+            }
         }
 
         private void AnaEkranForm_Load(object sender, EventArgs e)

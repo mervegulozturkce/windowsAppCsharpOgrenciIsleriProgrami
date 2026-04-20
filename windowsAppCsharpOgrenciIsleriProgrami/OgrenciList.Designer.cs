@@ -1,6 +1,6 @@
 ﻿namespace windowsAppCsharpOgrenciIsleriProgrami
 {
-    partial class AnaEkranForm
+    partial class OgrenciList
     {
         /// <summary>
         ///  Required designer variable.
@@ -47,7 +47,7 @@
             panel1.Dock = DockStyle.Top;
             panel1.Location = new Point(0, 0);
             panel1.Name = "panel1";
-            panel1.Size = new Size(838, 62);
+            panel1.Size = new Size(710, 62);
             panel1.TabIndex = 9;
             // 
             // button4
@@ -93,24 +93,24 @@
             // dataGridView1
             // 
             dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.Dock = DockStyle.Fill;
+            dataGridView1.Dock = DockStyle.Left;
             dataGridView1.Location = new Point(0, 62);
             dataGridView1.MultiSelect = false;
             dataGridView1.Name = "dataGridView1";
             dataGridView1.ReadOnly = true;
             dataGridView1.RowHeadersWidth = 51;
             dataGridView1.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            dataGridView1.Size = new Size(838, 302);
+            dataGridView1.Size = new Size(708, 278);
             dataGridView1.TabIndex = 10;
             // 
-            // AnaEkranForm
+            // OgrenciList
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(838, 364);
+            ClientSize = new Size(710, 340);
             Controls.Add(dataGridView1);
             Controls.Add(panel1);
-            Name = "AnaEkranForm";
+            Name = "OgrenciList";
             Text = "Form1";
             Load += AnaEkranForm_Load;
             panel1.ResumeLayout(false);
