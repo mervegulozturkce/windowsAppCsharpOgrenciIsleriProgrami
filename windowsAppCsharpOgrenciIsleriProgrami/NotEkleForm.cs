@@ -54,3 +54,10 @@ namespace windowsAppCsharpOgrenciIsleriProgrami
 
     }
 }
+
+
+
+// not ekleye tıklayıp birde öğrenciye tıklayıp not ekleyeck oraya ders kodunu da gireceek
+// hatalı kod girerse kayıt etmeyecek messeage box hatası verecek
+// sonra not görüntüleye tıklayıp öğrenciye tıklayıp o öğrencinin aldığı tümm notları görecek
+// bir tane daha sql açmam gerke notların girşiinin olduğu bir sql:)

@@ -172,7 +172,7 @@
             Controls.Add(studentList);
             Controls.Add(panel1);
             Name = "OgrenciList";
-            Text = "Form1";
+            Text = "OgrenciList";
             Load += AnaEkranForm_Load;
             panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)studentList).EndInit();

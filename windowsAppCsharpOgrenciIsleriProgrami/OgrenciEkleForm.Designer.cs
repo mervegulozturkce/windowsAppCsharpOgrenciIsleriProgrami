@@ -159,7 +159,7 @@
             Controls.Add(label2);
             Controls.Add(label1);
             Name = "OgrenciEkleForm";
-            Text = "Form2";
+            Text = "OgrenciEkleForm";
             ResumeLayout(false);
             PerformLayout();
         }

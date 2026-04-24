@@ -71,9 +71,5 @@ namespace windowsAppCsharpOgrenciIsleriProgrami
     }
 }
 
-// not ekleye týklayýp birde öðrenciye týklayýp not ekleyeck oraya ders kodunu da gireceek
-// hatalý kod girerse kayýt etmeyecek messeage box hatasý verecek
-// sonra not görüntüleye týklayýp öðrenciye týklayýp o öðrencinin aldýðý tümm notlarý görecek
-// bir tane daha sql açmam gerke notlarýn girþiinin olduðu bir sql:)
 
 
