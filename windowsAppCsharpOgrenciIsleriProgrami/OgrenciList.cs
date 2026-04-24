@@ -39,7 +39,7 @@ namespace windowsAppCsharpOgrenciIsleriProgrami
         {
             if (studentList.CurrentRow != null)
             {
-                int ogrenciId = (int)studentList.CurrentRow.Cells["Id"].Value;
+                int ogrenciId = (int)studentList.CurrentRow.Cells["studentList_Id"].Value;
 
                 OgrenciGoruntuleForm form3 = new OgrenciGoruntuleForm(ogrenciId);
                 form3.ShowDialog();
@@ -53,8 +53,14 @@ namespace windowsAppCsharpOgrenciIsleriProgrami
 
         private void button3_Click(object sender, EventArgs e)
         {
-            NotEkleForm form4 = new NotEkleForm();
-            form4.ShowDialog();
+            if (studentList.CurrentRow != null)
+            {
+                int ogrenciId = (int)studentList.CurrentRow.Cells["studentList_ Id"].Value;
+
+                NotEkleForm form4 = new NotEkleForm(ogrenciId);
+                form4.ShowDialog();
+            }
+
         }
 
         private void button4_Click(object sender, EventArgs e)
@@ -65,5 +71,9 @@ namespace windowsAppCsharpOgrenciIsleriProgrami
     }
 }
 
+// not ekleye týklayýp birde öðrenciye týklayýp not ekleyeck oraya ders kodunu da gireceek
+// hatalý kod girerse kayýt etmeyecek messeage box hatasý verecek
+// sonra not görüntüleye týklayýp öðrenciye týklayýp o öðrencinin aldýðý tümm notlarý görecek
+// bir tane daha sql açmam gerke notlarýn girþiinin olduðu bir sql:)
 
 

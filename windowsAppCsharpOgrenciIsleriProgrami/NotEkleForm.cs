@@ -17,14 +17,17 @@ namespace windowsAppCsharpOgrenciIsleriProgrami
         SqlConnection contact;
         SqlCommand command;
         SqlDataAdapter adapter;
-        public NotEkleForm()
+        int ogrenciId;
+        public NotEkleForm(int _ogrenciId)
         {
             InitializeComponent();
+            contact = DataLayer.GetSqlConnection();
+            ogrenciId = _ogrenciId;
+            add(ogrenciId);
         }
-        public void add()
+        public void add(int ogrenciId)
         {
-            contact = new SqlConnection(@"Server=MERVEGUL\SQL_2025_STD_DEV; Initial Catalog=Ogrenci; Integrated Security=True; TrustServerCertificate=True;");
-            string data = "Insert into OgrenciNot (StudentId,ClassCode,Score) values (@StudentId,@ClassCode,@Score)";
+            string data = "Insert into Results (StudentId,Cl,Score) values (@StudentId,@ClassCode,@Score)";
             command = new SqlCommand(data, contact);
             command.Parameters.AddWithValue("@StudentId", textBox1.Text);
             command.Parameters.AddWithValue("@ClassCode", textBox2.Text);
@@ -36,7 +39,7 @@ namespace windowsAppCsharpOgrenciIsleriProgrami
 
         private void button1_Click(object sender, EventArgs e)
         {
-            add();
+            add(ogrenciId);
 
             contact = new SqlConnection(@"Server=MERVEGUL\SQL_2025_STD_DEV; Initial Catalog=Ogrenci; Integrated Security=True; TrustServerCertificate=True;");
             string data = "Select * from OgrenciNot";

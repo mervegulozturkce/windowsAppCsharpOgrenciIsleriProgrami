@@ -54,7 +54,7 @@ namespace windowsAppCsharpOgrenciIsleriProgrami
         {
             if (classList.CurrentRow != null)
             {
-                int dersId = (int)classList.CurrentRow.Cells["Id"].Value;
+                int dersId = (int)classList.CurrentRow.Cells["classList_Id"].Value;
                 DersGoruntuleForm form7 = new DersGoruntuleForm(dersId);
                 form7.ShowDialog();
             }
@@ -66,7 +66,7 @@ namespace windowsAppCsharpOgrenciIsleriProgrami
         {
             if (classList.CurrentRow != null)
             {
-                int dersId = (int)classList.CurrentRow.Cells["Id"].Value;
+                int dersId = (int)classList.CurrentRow.Cells["classList_Id"].Value;
                 string sql = "DELETE FROM Class WHERE Id=@dersId";
 
                 SqlCommand command = new SqlCommand(sql, contact);
@@ -82,5 +82,7 @@ namespace windowsAppCsharpOgrenciIsleriProgrami
         {
             this.Dispose();
         }
+
+        // derslistformClosed neden öğrenciliistiçn yok bu bir problem
     }
 }

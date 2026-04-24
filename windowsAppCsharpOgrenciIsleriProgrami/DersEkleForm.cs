@@ -25,10 +25,10 @@ namespace windowsAppCsharpOgrenciIsleriProgrami
         public void add()
         {
             contact = DataLayer.GetSqlConnection();
-            string sql = "Insert into Ders ([Dersin Adı],[Dersin Kodu]) values (@ClassName,@ClassCode)";
+            string sql = "Insert into Class (Name,Code) values (@Name,@Code)";
             command = new SqlCommand(sql, contact);
-            command.Parameters.AddWithValue("@ClassName", textBox1.Text);
-            command.Parameters.AddWithValue("@ClassCode", textBox2.Text);
+            command.Parameters.AddWithValue("@Name", textBox1.Text);
+            command.Parameters.AddWithValue("@Code", textBox2.Text);
             contact.Open();
             command.ExecuteNonQuery();
             contact.Close();
@@ -39,7 +39,7 @@ namespace windowsAppCsharpOgrenciIsleriProgrami
             add();
 
             contact = DataLayer.GetSqlConnection();
-            string sql = "Select * from Ders";
+            string sql = "Select * from Class";
             adapter = new SqlDataAdapter(sql, contact);
 
             DataTable dataTable = new DataTable();

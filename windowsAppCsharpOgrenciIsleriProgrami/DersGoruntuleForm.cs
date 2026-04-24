@@ -28,7 +28,7 @@ namespace windowsAppCsharpOgrenciIsleriProgrami
         }
         public void list(int dersId)
         {
-            string sql = "Select [Dersin Adı],[Dersin Kodu] from Ders where Id=@dersId ";
+            string sql = "Select Name,Code from Class where Id=@dersId ";
 
             using (SqlCommand command = new SqlCommand(sql, contact))
             {
@@ -42,20 +42,20 @@ namespace windowsAppCsharpOgrenciIsleriProgrami
                 if (dataTable.Rows.Count > 0)
                 {
                     DataRow row = dataTable.Rows[0];
-                    textBox1.Text = row["Dersin Adı"].ToString();
-                    textBox2.Text = row["Dersin Kodu"].ToString();
+                    textBox1.Text = row["Name"].ToString();
+                    textBox2.Text = row["Code"].ToString();
                 }
             }
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
-            string sql = "UPDATE ders SET [Dersin Adı]=@ClassName,[Dersin Kodu]=@ClassCode WHERE Id=@dersId";
+            string sql = "UPDATE Class SET Name=@Name,Code=@Code WHERE Id=@dersId";
             SqlCommand command= new SqlCommand(sql,contact);
 
             command.Parameters.AddWithValue("@dersId", dersId);
-            command.Parameters.AddWithValue("@ClassName", textBox1.Text);
-            command.Parameters.AddWithValue("@ClassCode", textBox2.Text);
+            command.Parameters.AddWithValue("@Name", textBox1.Text);
+            command.Parameters.AddWithValue("@Code", textBox2.Text);
             contact.Open();
             command.ExecuteNonQuery();
             contact.Close();

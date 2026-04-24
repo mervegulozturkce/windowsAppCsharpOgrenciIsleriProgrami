@@ -28,7 +28,7 @@ namespace windowsAppCsharpOgrenciIsleriProgrami
 
         public void list(int ogrenciId)
         {
-            string sql = "Select Ad,Soyad,Yaş,Memleket,[Öğrenci Numarası] from Ogrenci where Id=@ogrenciId ";
+            string sql = "Select Name,Surname,Age,Hometown,StudentId from Ogrenci where Id=@ogrenciId ";
 
             using (SqlCommand command = new SqlCommand(sql, contact))
             {
@@ -42,11 +42,11 @@ namespace windowsAppCsharpOgrenciIsleriProgrami
                 if (dataTable.Rows.Count > 0)
                 {
                     DataRow row = dataTable.Rows[0];
-                    textBox8.Text = row["Ad"].ToString();
-                    textBox3.Text = row["Soyad"].ToString();
-                    textBox6.Text = row["Yaş"].ToString();
-                    textBox5.Text = row["Memleket"].ToString();
-                    textBox2.Text = row["Öğrenci Numarası"].ToString();
+                    textBox8.Text = row["Name"].ToString();
+                    textBox3.Text = row["Surname"].ToString();
+                    textBox6.Text = row["Age"].ToString();
+                    textBox5.Text = row["Hometown"].ToString();
+                    textBox2.Text = row["StudentId"].ToString();
                 }
             }
         }
@@ -66,7 +66,7 @@ namespace windowsAppCsharpOgrenciIsleriProgrami
 
         private void button1_Click(object sender, EventArgs e)
         {            
-            string sql = "UPDATE Ogrenci SET Ad=@Name, Soyad=@Surname, Yaş=@Age, Memleket=@Hometown, [Öğrenci Numarası]=@StudentId WHERE Id=@ogrenciId";
+            string sql = "UPDATE Ogrenci SET Name=@Name, Surname=@Surname, Age=@Age, Hometown=@Hometown, StudentId =@StudentId WHERE Id=@ogrenciId";
             SqlCommand command = new SqlCommand(sql, contact);
 
             command.Parameters.AddWithValue("@ogrenciId", ogrenciId);

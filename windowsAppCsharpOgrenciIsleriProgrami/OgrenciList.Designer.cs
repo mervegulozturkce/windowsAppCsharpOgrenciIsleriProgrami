@@ -35,11 +35,11 @@
             button1 = new Button();
             studentList = new DataGridView();
             studentList_Id = new DataGridViewTextBoxColumn();
+            studentList_StudentId = new DataGridViewTextBoxColumn();
             studentList_Name = new DataGridViewTextBoxColumn();
             studentList_Surname = new DataGridViewTextBoxColumn();
             studentList_Age = new DataGridViewTextBoxColumn();
             studentList_Hometown = new DataGridViewTextBoxColumn();
-            studentList_StudentId = new DataGridViewTextBoxColumn();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)studentList).BeginInit();
             SuspendLayout();
@@ -99,7 +99,7 @@
             // studentList
             // 
             studentList.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            studentList.Columns.AddRange(new DataGridViewColumn[] { studentList_Id, studentList_Name, studentList_Surname, studentList_Age, studentList_Hometown, studentList_StudentId });
+            studentList.Columns.AddRange(new DataGridViewColumn[] { studentList_Id, studentList_StudentId, studentList_Name, studentList_Surname, studentList_Age, studentList_Hometown });
             studentList.Dock = DockStyle.Left;
             studentList.Location = new Point(0, 62);
             studentList.MultiSelect = false;
@@ -118,6 +118,15 @@
             studentList_Id.Name = "studentList_Id";
             studentList_Id.ReadOnly = true;
             studentList_Id.Width = 125;
+            // 
+            // studentList_StudentId
+            // 
+            studentList_StudentId.DataPropertyName = "StudentId";
+            studentList_StudentId.HeaderText = "Öğrenci Numarası";
+            studentList_StudentId.MinimumWidth = 6;
+            studentList_StudentId.Name = "studentList_StudentId";
+            studentList_StudentId.ReadOnly = true;
+            studentList_StudentId.Width = 125;
             // 
             // studentList_Name
             // 
@@ -155,15 +164,6 @@
             studentList_Hometown.ReadOnly = true;
             studentList_Hometown.Width = 125;
             // 
-            // studentList_StudentId
-            // 
-            studentList_StudentId.DataPropertyName = "StudentId";
-            studentList_StudentId.HeaderText = "Öğrenci Numarası";
-            studentList_StudentId.MinimumWidth = 6;
-            studentList_StudentId.Name = "studentList_StudentId";
-            studentList_StudentId.ReadOnly = true;
-            studentList_StudentId.Width = 125;
-            // 
             // OgrenciList
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
@@ -188,10 +188,10 @@
         private Button button1;
         private DataGridView studentList;
         private DataGridViewTextBoxColumn studentList_Id;
+        private DataGridViewTextBoxColumn studentList_StudentId;
         private DataGridViewTextBoxColumn studentList_Name;
         private DataGridViewTextBoxColumn studentList_Surname;
         private DataGridViewTextBoxColumn studentList_Age;
         private DataGridViewTextBoxColumn studentList_Hometown;
-        private DataGridViewTextBoxColumn studentList_StudentId;
     }
 }
