@@ -40,6 +40,7 @@ namespace windowsAppCsharpOgrenciIsleriProgrami
             if (studentList.CurrentRow != null)
             {
                 int ogrenciId = (int)studentList.CurrentRow.Cells["studentList_Id"].Value;
+                // burada turuncu kýsým büyük ihtiamlle dümdüz Id olacak yine de bir bak:)))
 
                 OgrenciGoruntuleForm form3 = new OgrenciGoruntuleForm(ogrenciId);
                 form3.ShowDialog();
@@ -55,14 +56,13 @@ namespace windowsAppCsharpOgrenciIsleriProgrami
         {
             if (studentList.CurrentRow != null)
             {
-                int ogrenciId = (int)studentList.CurrentRow.Cells["studentList_ Id"].Value;
+                int ogrenciId = (int)studentList.CurrentRow.Cells["studentList_Id"].Value;
 
                 NotEkleForm form4 = new NotEkleForm(ogrenciId);
                 form4.ShowDialog();
             }
 
         }
-
         private void button4_Click(object sender, EventArgs e)
         {
             NotGoruntuleForm form5 = new NotGoruntuleForm();

@@ -23,41 +23,35 @@ namespace windowsAppCsharpOgrenciIsleriProgrami
             InitializeComponent();
             contact = DataLayer.GetSqlConnection();
             ogrenciId = _ogrenciId;
-            add(ogrenciId);
         }
-        public void add(int ogrenciId)
+
+        public void list(int ogrenciId)
         {
-            string data = "Insert into Results (StudentId,Cl,Score) values (@StudentId,@ClassCode,@Score)";
-            command = new SqlCommand(data, contact);
-            command.Parameters.AddWithValue("@StudentId", textBox1.Text);
-            command.Parameters.AddWithValue("@ClassCode", textBox2.Text);
-            command.Parameters.AddWithValue("@Score", textBox3.Text);
-            contact.Open();
-            command.ExecuteNonQuery();
-            contact.Close();
-        }
+            string sql = "SELECT Name, Surname FROM Ogrenci WHERE Id = @ogrenciId";
 
-        private void button1_Click(object sender, EventArgs e)
+            using (SqlCommand command = new SqlCommand(sql, contact))
+            {
+                command.Parameters.AddWithValue("@ogrenciId", ogrenciId);
+                adapter = new SqlDataAdapter(command);
+                DataTable dataTable = new DataTable();
+                contact.Open();
+                adapter.Fill(dataTable);
+                contact.Close();
+
+                if (dataTable.Rows.Count > 0)
+                {
+                    DataRow row = dataTable.Rows[0];
+                    textBox9.Text = $"{row["Name"].ToString()} {row["Surname"].ToString()}";
+                }
+            }
+        }
+        private void NotEkleForm_Load(object sender, EventArgs e)
         {
-            add(ogrenciId);
-
-            contact = new SqlConnection(@"Server=MERVEGUL\SQL_2025_STD_DEV; Initial Catalog=Ogrenci; Integrated Security=True; TrustServerCertificate=True;");
-            string data = "Select * from OgrenciNot";
-            adapter = new SqlDataAdapter(data, contact);
-
-            DataTable dataTable = new DataTable();
-            adapter.Fill(dataTable);
-
-            MessageBox.Show("İlgili öğrenciye not ekleniyor...");
-            Close();
+            list(ogrenciId);
         }
-
     }
 }
 
-
-
-// not ekleye tıklayıp birde öğrenciye tıklayıp not ekleyeck oraya ders kodunu da gireceek
-// hatalı kod girerse kayıt etmeyecek messeage box hatası verecek
-// sonra not görüntüleye tıklayıp öğrenciye tıklayıp o öğrencinin aldığı tümm notları görecek
-// bir tane daha sql açmam gerke notların girşiinin olduğu bir sql:)
+// ikinci hedef ise datagridview'e o öğrenciye ait dersler ve notları yazdırmak
+// yani önce derlerden girdiridiğim dersleri resultta id sütüuna alt alta yazdırmak
+// sonrasında gridde yazılabilecek kıvama getirmek ve tabiki bunu kaydedebilmek her 
