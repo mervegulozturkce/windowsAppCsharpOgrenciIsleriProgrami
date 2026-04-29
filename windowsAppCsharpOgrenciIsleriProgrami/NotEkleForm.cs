@@ -8,6 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static System.Runtime.InteropServices.JavaScript.JSType;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace windowsAppCsharpOgrenciIsleriProgrami
@@ -48,10 +49,25 @@ namespace windowsAppCsharpOgrenciIsleriProgrami
         private void NotEkleForm_Load(object sender, EventArgs e)
         {
             list(ogrenciId);
+            gridFill();
         }
+// buralrdayım
+        public void gridFill()
+        {
+            string sql = "SELECT Midterm,Finals,Homeworks,Quiz,MakeUp,TermGrade FROM Results";
+
+            using (SqlCommand command = new SqlCommand(sql, contact))
+            {
+                adapter = new SqlDataAdapter(command);
+                DataTable dataTable = new DataTable();
+                contact.Open();
+                adapter.Fill(dataTable);
+                contact.Close();
+                dataGridView1.DataSource = dataTable;
+            }
+        }
+
     }
 }
-
-// ikinci hedef ise datagridview'e o öğrenciye ait dersler ve notları yazdırmak
-// yani önce derlerden girdiridiğim dersleri resultta id sütüuna alt alta yazdırmak
+// result sqlini not ekleye bağlamam gerek
 // sonrasında gridde yazılabilecek kıvama getirmek ve tabiki bunu kaydedebilmek her 

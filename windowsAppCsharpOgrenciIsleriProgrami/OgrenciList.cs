@@ -40,7 +40,6 @@ namespace windowsAppCsharpOgrenciIsleriProgrami
             if (studentList.CurrentRow != null)
             {
                 int ogrenciId = (int)studentList.CurrentRow.Cells["studentList_Id"].Value;
-                // burada turuncu kýsým büyük ihtiamlle dümdüz Id olacak yine de bir bak:)))
 
                 OgrenciGoruntuleForm form3 = new OgrenciGoruntuleForm(ogrenciId);
                 form3.ShowDialog();
