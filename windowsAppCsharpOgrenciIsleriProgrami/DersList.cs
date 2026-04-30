@@ -74,6 +74,7 @@ namespace windowsAppCsharpOgrenciIsleriProgrami
                 contact.Open();
                 command.ExecuteNonQuery();
                 contact.Close();
+                //delete();
                 MessageBox.Show("Ders başarıyla silindi.");
             }
         }
@@ -83,6 +84,5 @@ namespace windowsAppCsharpOgrenciIsleriProgrami
             this.Dispose();
         }
 
-        // derslistformClosed neden öğrenciliistiçn yok bu bir problem
     }
 }

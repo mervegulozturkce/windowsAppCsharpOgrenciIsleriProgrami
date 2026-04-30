@@ -30,15 +30,15 @@
         {
             label10 = new Label();
             dataGridView1 = new DataGridView();
-            textBox9 = new TextBox();
-            ResultsList_Id = new DataGridViewTextBoxColumn();
-            ResultsList_Name = new DataGridViewTextBoxColumn();
+            ResultsList_ClassName = new DataGridViewTextBoxColumn();
             ResultsList_Midterm = new DataGridViewTextBoxColumn();
             ResultsList_Finals = new DataGridViewTextBoxColumn();
             ResultsList_Homeworks = new DataGridViewTextBoxColumn();
             ResultsList_Quiz = new DataGridViewTextBoxColumn();
             ResultsList_MakeUp = new DataGridViewTextBoxColumn();
             ResultsList_TermGrade = new DataGridViewTextBoxColumn();
+            textBox9 = new TextBox();
+            button1 = new Button();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             SuspendLayout();
             // 
@@ -54,35 +54,21 @@
             // dataGridView1
             // 
             dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.Columns.AddRange(new DataGridViewColumn[] { ResultsList_Id, ResultsList_Name, ResultsList_Midterm, ResultsList_Finals, ResultsList_Homeworks, ResultsList_Quiz, ResultsList_MakeUp, ResultsList_TermGrade });
+            dataGridView1.Columns.AddRange(new DataGridViewColumn[] { ResultsList_ClassName, ResultsList_Midterm, ResultsList_Finals, ResultsList_Homeworks, ResultsList_Quiz, ResultsList_MakeUp, ResultsList_TermGrade });
             dataGridView1.Location = new Point(39, 49);
             dataGridView1.Name = "dataGridView1";
             dataGridView1.RowHeadersWidth = 51;
-            dataGridView1.Size = new Size(675, 351);
+            dataGridView1.Size = new Size(1029, 351);
             dataGridView1.TabIndex = 9;
+            dataGridView1.CellContentClick += dataGridView1_CellContentClick;
             // 
-            // textBox9
+            // ResultsList_ClassName
             // 
-            textBox9.Location = new Point(109, 6);
-            textBox9.Name = "textBox9";
-            textBox9.Size = new Size(189, 27);
-            textBox9.TabIndex = 10;
-            // 
-            // ResultsList_Id
-            // 
-            ResultsList_Id.DataPropertyName = "Id";
-            ResultsList_Id.HeaderText = "Id";
-            ResultsList_Id.MinimumWidth = 6;
-            ResultsList_Id.Name = "ResultsList_Id";
-            ResultsList_Id.Width = 125;
-            // 
-            // ResultsList_Name
-            // 
-            ResultsList_Name.DataPropertyName = "Name";
-            ResultsList_Name.HeaderText = "Ders Adı";
-            ResultsList_Name.MinimumWidth = 6;
-            ResultsList_Name.Name = "ResultsList_Name";
-            ResultsList_Name.Width = 125;
+            ResultsList_ClassName.DataPropertyName = "ClassName";
+            ResultsList_ClassName.HeaderText = "Ders Adı";
+            ResultsList_ClassName.MinimumWidth = 6;
+            ResultsList_ClassName.Name = "ResultsList_ClassName";
+            ResultsList_ClassName.Width = 125;
             // 
             // ResultsList_Midterm
             // 
@@ -132,11 +118,29 @@
             ResultsList_TermGrade.Name = "ResultsList_TermGrade";
             ResultsList_TermGrade.Width = 125;
             // 
+            // textBox9
+            // 
+            textBox9.Location = new Point(109, 6);
+            textBox9.Name = "textBox9";
+            textBox9.Size = new Size(189, 27);
+            textBox9.TabIndex = 10;
+            // 
+            // button1
+            // 
+            button1.Location = new Point(548, 406);
+            button1.Name = "button1";
+            button1.Size = new Size(152, 33);
+            button1.TabIndex = 11;
+            button1.Text = "Gönder";
+            button1.UseVisualStyleBackColor = true;
+            button1.Click += button1_Click;
+            // 
             // NotEkleForm
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(745, 450);
+            ClientSize = new Size(1116, 450);
+            Controls.Add(button1);
             Controls.Add(textBox9);
             Controls.Add(dataGridView1);
             Controls.Add(label10);
@@ -168,14 +172,14 @@
         private Label label10;
         private DataGridView dataGridView1;
         private TextBox textBox9;
-        private DataGridViewTextBoxColumn ResultsList_Id;
         private DataGridViewTextBoxColumn ResultsList_Code;
+        private Button button1;
+        private DataGridViewTextBoxColumn ResultsList_ClassName;
         private DataGridViewTextBoxColumn ResultsList_Midterm;
         private DataGridViewTextBoxColumn ResultsList_Finals;
         private DataGridViewTextBoxColumn ResultsList_Homeworks;
         private DataGridViewTextBoxColumn ResultsList_Quiz;
         private DataGridViewTextBoxColumn ResultsList_MakeUp;
         private DataGridViewTextBoxColumn ResultsList_TermGrade;
-        private DataGridViewTextBoxColumn ResultsList_Name;
     }
 }

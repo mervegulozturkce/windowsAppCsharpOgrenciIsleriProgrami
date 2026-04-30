@@ -29,7 +29,6 @@
         private void InitializeComponent()
         {
             panel1 = new Panel();
-            button4 = new Button();
             button3 = new Button();
             button2 = new Button();
             button1 = new Button();
@@ -46,7 +45,6 @@
             // 
             // panel1
             // 
-            panel1.Controls.Add(button4);
             panel1.Controls.Add(button3);
             panel1.Controls.Add(button2);
             panel1.Controls.Add(button1);
@@ -56,23 +54,13 @@
             panel1.Size = new Size(915, 62);
             panel1.TabIndex = 9;
             // 
-            // button4
-            // 
-            button4.Location = new Point(492, 18);
-            button4.Name = "button4";
-            button4.Size = new Size(154, 30);
-            button4.TabIndex = 10;
-            button4.Text = "Not Görüntüle";
-            button4.UseVisualStyleBackColor = true;
-            button4.Click += button4_Click;
-            // 
             // button3
             // 
             button3.Location = new Point(332, 18);
             button3.Name = "button3";
             button3.Size = new Size(154, 30);
             button3.TabIndex = 9;
-            button3.Text = "Not Ekle";
+            button3.Text = "Not ";
             button3.UseVisualStyleBackColor = true;
             button3.Click += button3_Click;
             // 
@@ -98,6 +86,8 @@
             // 
             // studentList
             // 
+            studentList.AllowUserToAddRows = false;
+            studentList.AllowUserToDeleteRows = false;
             studentList.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             studentList.Columns.AddRange(new DataGridViewColumn[] { studentList_Id, studentList_StudentId, studentList_Name, studentList_Surname, studentList_Age, studentList_Hometown });
             studentList.Dock = DockStyle.Left;
@@ -182,7 +172,6 @@
         #endregion
 
         private Panel panel1;
-        private Button button4;
         private Button button3;
         private Button button2;
         private Button button1;

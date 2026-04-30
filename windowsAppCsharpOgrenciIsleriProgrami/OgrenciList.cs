@@ -60,12 +60,6 @@ namespace windowsAppCsharpOgrenciIsleriProgrami
                 NotEkleForm form4 = new NotEkleForm(ogrenciId);
                 form4.ShowDialog();
             }
-
-        }
-        private void button4_Click(object sender, EventArgs e)
-        {
-            NotGoruntuleForm form5 = new NotGoruntuleForm();
-            form5.ShowDialog();
         }
     }
 }

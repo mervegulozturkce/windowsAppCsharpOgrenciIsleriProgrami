@@ -60,7 +60,6 @@ namespace windowsAppCsharpOgrenciIsleriProgrami
             command.ExecuteNonQuery();
             contact.Close();
             MessageBox.Show("Ders başarıyla güncellendi."); 
-
         }
     }
 }

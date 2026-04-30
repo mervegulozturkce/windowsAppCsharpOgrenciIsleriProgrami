@@ -49,15 +49,16 @@ namespace windowsAppCsharpOgrenciIsleriProgrami
         private void NotEkleForm_Load(object sender, EventArgs e)
         {
             list(ogrenciId);
-            gridFill();
+            gridFill(ogrenciId);
         }
-// buralrdayım
-        public void gridFill()
+
+        public void gridFill(int ogrenciId)
         {
-            string sql = "SELECT Midterm,Finals,Homeworks,Quiz,MakeUp,TermGrade FROM Results";
+            string sql = "SELECT ClassName, Midterm, Finals, Homeworks, Quiz, MakeUp, TermGrade FROM Results WHERE StudentId = @ogrenciId";
 
             using (SqlCommand command = new SqlCommand(sql, contact))
             {
+                command.Parameters.AddWithValue("@ogrenciId", ogrenciId);
                 adapter = new SqlDataAdapter(command);
                 DataTable dataTable = new DataTable();
                 contact.Open();
@@ -67,7 +68,30 @@ namespace windowsAppCsharpOgrenciIsleriProgrami
             }
         }
 
+        private void button1_Click(object sender, EventArgs e)
+        {
+            Close();
+            MessageBox.Show("Not ekleme işlemi tamamlanıyor...");
+        }
+
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
     }
 }
+
+//resultsa gelen derslerin silinmesi güncellenmesi- silmesi gerek
+//ders güncelleden güncellediğim dersi resulsta bulunanan dersi de aynı nada güncellemeli-silmeli
 // result sqlini not ekleye bağlamam gerek
 // sonrasında gridde yazılabilecek kıvama getirmek ve tabiki bunu kaydedebilmek her 
+
+//rsulstaki dders adına satır no yazacak
+
+// not ekledeki gönder butonunu çalıştır
+
+
+// DERSİN SATIR NOSU RSULTSA GELECEK
+
+
+//////////////////// butonu çlaışı hael getir

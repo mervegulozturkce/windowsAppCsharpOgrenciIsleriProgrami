@@ -39,20 +39,6 @@ namespace windowsAppCsharpOgrenciIsleriProgrami
             contact.Close();
 
         }
-
-        public void add2()
-        {
-            string sql = "Insert into Results (Name) values (@Name)";
-
-            command = new SqlCommand(sql, contact);
-
-            command.Parameters.AddWithValue("@Name", textBox1.Text);
-
-            contact.Open();
-            command.ExecuteNonQuery();
-            contact.Close();
-        }
-
         private void button1_Click(object sender, EventArgs e)
         {
             add();
@@ -64,23 +50,9 @@ namespace windowsAppCsharpOgrenciIsleriProgrami
             DataTable dataTable = new DataTable();
             adapter.Fill(dataTable);
 
-            sended();
-
             MessageBox.Show("Ders ekleniyor...");
 
             Close();
-        }
-
-        public void sended()
-        {
-            add2();
-
-            string sql = "Select * from Results";
-
-            adapter = new SqlDataAdapter(sql, contact);
-
-            DataTable dataTable = new DataTable();
-            adapter.Fill(dataTable);
         }
     }
 }

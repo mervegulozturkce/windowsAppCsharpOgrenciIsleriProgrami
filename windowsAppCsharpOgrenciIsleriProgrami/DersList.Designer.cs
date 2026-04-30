@@ -29,25 +29,56 @@
         private void InitializeComponent()
         {
             classList = new DataGridView();
-            button1 = new Button();
-            button2 = new Button();
-            button3 = new Button();
             classList_Id = new DataGridViewTextBoxColumn();
             classList_Name = new DataGridViewTextBoxColumn();
             classList_Code = new DataGridViewTextBoxColumn();
+            button1 = new Button();
+            button2 = new Button();
+            button3 = new Button();
             ((System.ComponentModel.ISupportInitialize)classList).BeginInit();
             SuspendLayout();
             // 
             // classList
             // 
+            classList.AllowUserToAddRows = false;
+            classList.AllowUserToDeleteRows = false;
             classList.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             classList.Columns.AddRange(new DataGridViewColumn[] { classList_Id, classList_Name, classList_Code });
             classList.Location = new Point(12, 55);
+            classList.MultiSelect = false;
             classList.Name = "classList";
+            classList.ReadOnly = true;
             classList.RowHeadersWidth = 51;
             classList.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             classList.Size = new Size(775, 392);
             classList.TabIndex = 0;
+            // 
+            // classList_Id
+            // 
+            classList_Id.DataPropertyName = "Id";
+            classList_Id.HeaderText = "Id";
+            classList_Id.MinimumWidth = 6;
+            classList_Id.Name = "classList_Id";
+            classList_Id.ReadOnly = true;
+            classList_Id.Width = 125;
+            // 
+            // classList_Name
+            // 
+            classList_Name.DataPropertyName = "Name";
+            classList_Name.HeaderText = "Ders Adı";
+            classList_Name.MinimumWidth = 6;
+            classList_Name.Name = "classList_Name";
+            classList_Name.ReadOnly = true;
+            classList_Name.Width = 125;
+            // 
+            // classList_Code
+            // 
+            classList_Code.DataPropertyName = "Code";
+            classList_Code.HeaderText = "Ders Kodu";
+            classList_Code.MinimumWidth = 6;
+            classList_Code.Name = "classList_Code";
+            classList_Code.ReadOnly = true;
+            classList_Code.Width = 125;
             // 
             // button1
             // 
@@ -78,31 +109,6 @@
             button3.Text = "Ders Sil";
             button3.UseVisualStyleBackColor = true;
             button3.Click += button3_Click;
-            // 
-            // classList_Id
-            // 
-            classList_Id.DataPropertyName = "Id";
-            classList_Id.HeaderText = "Id";
-            classList_Id.MinimumWidth = 6;
-            classList_Id.Name = "classList_Id";
-            classList_Id.ReadOnly = true;
-            classList_Id.Width = 125;
-            // 
-            // classList_Name
-            // 
-            classList_Name.DataPropertyName = "Name";
-            classList_Name.HeaderText = "Ders Adı";
-            classList_Name.MinimumWidth = 6;
-            classList_Name.Name = "classList_Name";
-            classList_Name.Width = 125;
-            // 
-            // classList_Code
-            // 
-            classList_Code.DataPropertyName = "Code";
-            classList_Code.HeaderText = "Ders Kodu";
-            classList_Code.MinimumWidth = 6;
-            classList_Code.Name = "classList_Code";
-            classList_Code.Width = 125;
             // 
             // DersList
             // 
