@@ -81,17 +81,7 @@ namespace windowsAppCsharpOgrenciIsleriProgrami
     }
 }
 
-//resultsa gelen derslerin silinmesi güncellenmesi- silmesi gerek
-//ders güncelleden güncellediğim dersi resulsta bulunanan dersi de aynı nada güncellemeli-silmeli
-// result sqlini not ekleye bağlamam gerek
-// sonrasında gridde yazılabilecek kıvama getirmek ve tabiki bunu kaydedebilmek her 
-
-//rsulstaki dders adına satır no yazacak
-
 // not ekledeki gönder butonunu çalıştır
 
-
-// DERSİN SATIR NOSU RSULTSA GELECEK
-
-
 //////////////////// butonu çlaışı hael getir
+/////////////////////// ınner hoini çözemedim ya çöz lan onu classname ile name aynı olacak

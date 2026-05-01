@@ -34,7 +34,7 @@
             button1 = new Button();
             studentList = new DataGridView();
             studentList_Id = new DataGridViewTextBoxColumn();
-            studentList_StudentId = new DataGridViewTextBoxColumn();
+            studentList_StudentNumber = new DataGridViewTextBoxColumn();
             studentList_Name = new DataGridViewTextBoxColumn();
             studentList_Surname = new DataGridViewTextBoxColumn();
             studentList_Age = new DataGridViewTextBoxColumn();
@@ -89,7 +89,7 @@
             studentList.AllowUserToAddRows = false;
             studentList.AllowUserToDeleteRows = false;
             studentList.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            studentList.Columns.AddRange(new DataGridViewColumn[] { studentList_Id, studentList_StudentId, studentList_Name, studentList_Surname, studentList_Age, studentList_Hometown });
+            studentList.Columns.AddRange(new DataGridViewColumn[] { studentList_Id, studentList_StudentNumber, studentList_Name, studentList_Surname, studentList_Age, studentList_Hometown });
             studentList.Dock = DockStyle.Left;
             studentList.Location = new Point(0, 62);
             studentList.MultiSelect = false;
@@ -109,14 +109,14 @@
             studentList_Id.ReadOnly = true;
             studentList_Id.Width = 125;
             // 
-            // studentList_StudentId
+            // studentList_StudentNumber
             // 
-            studentList_StudentId.DataPropertyName = "StudentId";
-            studentList_StudentId.HeaderText = "Öğrenci Numarası";
-            studentList_StudentId.MinimumWidth = 6;
-            studentList_StudentId.Name = "studentList_StudentId";
-            studentList_StudentId.ReadOnly = true;
-            studentList_StudentId.Width = 125;
+            studentList_StudentNumber.DataPropertyName = "StudentNumber";
+            studentList_StudentNumber.HeaderText = "Öğrenci Numarası";
+            studentList_StudentNumber.MinimumWidth = 6;
+            studentList_StudentNumber.Name = "studentList_StudentNumber";
+            studentList_StudentNumber.ReadOnly = true;
+            studentList_StudentNumber.Width = 125;
             // 
             // studentList_Name
             // 
@@ -177,7 +177,7 @@
         private Button button1;
         private DataGridView studentList;
         private DataGridViewTextBoxColumn studentList_Id;
-        private DataGridViewTextBoxColumn studentList_StudentId;
+        private DataGridViewTextBoxColumn studentList_StudentNumber;
         private DataGridViewTextBoxColumn studentList_Name;
         private DataGridViewTextBoxColumn studentList_Surname;
         private DataGridViewTextBoxColumn studentList_Age;

@@ -28,7 +28,7 @@ namespace windowsAppCsharpOgrenciIsleriProgrami
 
         public void list(int ogrenciId)
         {
-            string sql = "Select Name,Surname,Age,Hometown,StudentId from Ogrenci where Id=@ogrenciId ";
+            string sql = "Select Name,Surname,Age,Hometown,StudentNumber from Ogrenci where Id=@ogrenciId ";
 
             using (SqlCommand command = new SqlCommand(sql, contact))
             {
@@ -46,7 +46,7 @@ namespace windowsAppCsharpOgrenciIsleriProgrami
                     textBox3.Text = row["Surname"].ToString();
                     textBox6.Text = row["Age"].ToString();
                     textBox5.Text = row["Hometown"].ToString();
-                    textBox2.Text = row["StudentId"].ToString();
+                    textBox2.Text = row["StudentNumber"].ToString();
                 }
             }
         }
@@ -66,7 +66,7 @@ namespace windowsAppCsharpOgrenciIsleriProgrami
 
         private void button1_Click(object sender, EventArgs e)
         {            
-            string sql = "UPDATE Ogrenci SET Name=@Name, Surname=@Surname, Age=@Age, Hometown=@Hometown, StudentId =@StudentId WHERE Id=@ogrenciId";
+            string sql = "UPDATE Ogrenci SET Name=@Name, Surname=@Surname, Age=@Age, Hometown=@Hometown, StudentNumber =@StudentNumber WHERE Id=@ogrenciId";
             SqlCommand command = new SqlCommand(sql, contact);
 
             command.Parameters.AddWithValue("@ogrenciId", ogrenciId);
@@ -74,7 +74,7 @@ namespace windowsAppCsharpOgrenciIsleriProgrami
             command.Parameters.AddWithValue("@Surname", textBox3.Text);
             command.Parameters.AddWithValue("@Age", int.Parse(textBox6.Text));
             command.Parameters.AddWithValue("@Hometown", textBox5.Text);
-            command.Parameters.AddWithValue("@StudentId", textBox2.Text);
+            command.Parameters.AddWithValue("@StudentNumber", textBox2.Text);
 
             contact.Open();
             command.ExecuteNonQuery();
