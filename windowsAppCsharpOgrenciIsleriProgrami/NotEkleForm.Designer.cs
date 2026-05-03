@@ -31,6 +31,8 @@
             label10 = new Label();
             dataGridView1 = new DataGridView();
             ResultsList_ClassName = new DataGridViewTextBoxColumn();
+            ResultsList_ClassCode = new DataGridViewTextBoxColumn();
+            ResultsList_Id = new DataGridViewTextBoxColumn();
             ResultsList_Midterm = new DataGridViewTextBoxColumn();
             ResultsList_Finals = new DataGridViewTextBoxColumn();
             ResultsList_Homeworks = new DataGridViewTextBoxColumn();
@@ -53,14 +55,14 @@
             // 
             // dataGridView1
             // 
+            dataGridView1.AllowUserToAddRows = false;
             dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.Columns.AddRange(new DataGridViewColumn[] { ResultsList_ClassName, ResultsList_Midterm, ResultsList_Finals, ResultsList_Homeworks, ResultsList_Quiz, ResultsList_MakeUp, ResultsList_TermGrade });
-            dataGridView1.Location = new Point(39, 49);
+            dataGridView1.Columns.AddRange(new DataGridViewColumn[] { ResultsList_ClassName, ResultsList_ClassCode, ResultsList_Id, ResultsList_Midterm, ResultsList_Finals, ResultsList_Homeworks, ResultsList_Quiz, ResultsList_MakeUp, ResultsList_TermGrade });
+            dataGridView1.Location = new Point(12, 49);
             dataGridView1.Name = "dataGridView1";
             dataGridView1.RowHeadersWidth = 51;
-            dataGridView1.Size = new Size(1029, 351);
+            dataGridView1.Size = new Size(1054, 351);
             dataGridView1.TabIndex = 9;
-            dataGridView1.CellContentClick += dataGridView1_CellContentClick;
             // 
             // ResultsList_ClassName
             // 
@@ -68,7 +70,26 @@
             ResultsList_ClassName.HeaderText = "Ders Adı";
             ResultsList_ClassName.MinimumWidth = 6;
             ResultsList_ClassName.Name = "ResultsList_ClassName";
+            ResultsList_ClassName.ReadOnly = true;
             ResultsList_ClassName.Width = 125;
+            // 
+            // ResultsList_ClassCode
+            // 
+            ResultsList_ClassCode.DataPropertyName = "ClassCode";
+            ResultsList_ClassCode.HeaderText = "Ders Kodu";
+            ResultsList_ClassCode.MinimumWidth = 6;
+            ResultsList_ClassCode.Name = "ResultsList_ClassCode";
+            ResultsList_ClassCode.ReadOnly = true;
+            ResultsList_ClassCode.Width = 125;
+            // 
+            // ResultsList_Id
+            // 
+            ResultsList_Id.DataPropertyName = "Id";
+            ResultsList_Id.HeaderText = "Id";
+            ResultsList_Id.MinimumWidth = 6;
+            ResultsList_Id.Name = "ResultsList_Id";
+            ResultsList_Id.Visible = false;
+            ResultsList_Id.Width = 125;
             // 
             // ResultsList_Midterm
             // 
@@ -116,6 +137,7 @@
             ResultsList_TermGrade.HeaderText = "Not Ortalaması";
             ResultsList_TermGrade.MinimumWidth = 6;
             ResultsList_TermGrade.Name = "ResultsList_TermGrade";
+            ResultsList_TermGrade.ReadOnly = true;
             ResultsList_TermGrade.Width = 125;
             // 
             // textBox9
@@ -175,6 +197,8 @@
         private DataGridViewTextBoxColumn ResultsList_Code;
         private Button button1;
         private DataGridViewTextBoxColumn ResultsList_ClassName;
+        private DataGridViewTextBoxColumn ResultsList_ClassCode;
+        private DataGridViewTextBoxColumn ResultsList_Id;
         private DataGridViewTextBoxColumn ResultsList_Midterm;
         private DataGridViewTextBoxColumn ResultsList_Finals;
         private DataGridViewTextBoxColumn ResultsList_Homeworks;
