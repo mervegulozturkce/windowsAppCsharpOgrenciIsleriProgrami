@@ -24,6 +24,23 @@ namespace windowsAppCsharpOgrenciIsleriProgrami
             InitializeComponent();
             contact = DataLayer.GetSqlConnection();
             ogrenciId = _ogrenciId;
+
+
+            string query = @"
+            INSERT INTO Results (StudentId, ClassId)
+            SELECT @StudentId, C.Id
+            FROM Class C
+            WHERE C.Id NOT IN (SELECT ClassId FROM Results WHERE StudentId = @StudentId)";
+
+            command = new SqlCommand(query, contact);
+            command.Parameters.AddWithValue("@StudentId", ogrenciId);
+            contact.Open();
+            int rowsAffected = command.ExecuteNonQuery();
+            contact.Close();
+            Console.WriteLine($"{rowsAffected} satır eklendi.");
+
+
+           // string sql = "INSERT INTO Results (StudentId,ClassId) values (@StudentId,@ClassId)";
         }
 
         public void list(int ogrenciId)
@@ -148,7 +165,6 @@ namespace windowsAppCsharpOgrenciIsleriProgrami
                 }
             }
         }
-
         public void averageSave(decimal average,int id)
         {
             string sql = "UPDATE Results SET TermGrade=@TermGrade WHERE Id=@id";
