@@ -26,21 +26,18 @@ namespace windowsAppCsharpOgrenciIsleriProgrami
             ogrenciId = _ogrenciId;
 
 
-            string query = @"
+            string sql = @"
             INSERT INTO Results (StudentId, ClassId)
             SELECT @StudentId, C.Id
             FROM Class C
             WHERE C.Id NOT IN (SELECT ClassId FROM Results WHERE StudentId = @StudentId)";
 
-            command = new SqlCommand(query, contact);
+            command = new SqlCommand(sql, contact);
             command.Parameters.AddWithValue("@StudentId", ogrenciId);
             contact.Open();
             int rowsAffected = command.ExecuteNonQuery();
             contact.Close();
             Console.WriteLine($"{rowsAffected} satır eklendi.");
-
-
-           // string sql = "INSERT INTO Results (StudentId,ClassId) values (@StudentId,@ClassId)";
         }
 
         public void list(int ogrenciId)
