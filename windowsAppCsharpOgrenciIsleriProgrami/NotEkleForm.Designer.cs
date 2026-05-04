@@ -30,8 +30,6 @@
         {
             label10 = new Label();
             dataGridView1 = new DataGridView();
-            textBox9 = new TextBox();
-            button1 = new Button();
             ResultsList_ClassName = new DataGridViewTextBoxColumn();
             ResultsList_ClassCode = new DataGridViewTextBoxColumn();
             ResultsList_Id = new DataGridViewTextBoxColumn();
@@ -41,6 +39,8 @@
             ResultsList_Quiz = new DataGridViewTextBoxColumn();
             ResultsList_MakeUp = new DataGridViewTextBoxColumn();
             ResultsList_TermGrade = new DataGridViewTextBoxColumn();
+            textBox9 = new TextBox();
+            button1 = new Button();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             SuspendLayout();
             // 
@@ -63,23 +63,6 @@
             dataGridView1.RowHeadersWidth = 51;
             dataGridView1.Size = new Size(1054, 351);
             dataGridView1.TabIndex = 9;
-            // 
-            // textBox9
-            // 
-            textBox9.Location = new Point(109, 6);
-            textBox9.Name = "textBox9";
-            textBox9.Size = new Size(189, 27);
-            textBox9.TabIndex = 10;
-            // 
-            // button1
-            // 
-            button1.Location = new Point(548, 406);
-            button1.Name = "button1";
-            button1.Size = new Size(152, 33);
-            button1.TabIndex = 11;
-            button1.Text = "Gönder";
-            button1.UseVisualStyleBackColor = true;
-            button1.Click += button1_Click;
             // 
             // ResultsList_ClassName
             // 
@@ -156,6 +139,23 @@
             ResultsList_TermGrade.Name = "ResultsList_TermGrade";
             ResultsList_TermGrade.ReadOnly = true;
             ResultsList_TermGrade.Width = 125;
+            // 
+            // textBox9
+            // 
+            textBox9.Location = new Point(109, 6);
+            textBox9.Name = "textBox9";
+            textBox9.Size = new Size(189, 27);
+            textBox9.TabIndex = 10;
+            // 
+            // button1
+            // 
+            button1.Location = new Point(548, 406);
+            button1.Name = "button1";
+            button1.Size = new Size(152, 33);
+            button1.TabIndex = 11;
+            button1.Text = "Gönder";
+            button1.UseVisualStyleBackColor = true;
+            button1.Click += button1_Click;
             // 
             // NotEkleForm
             // 

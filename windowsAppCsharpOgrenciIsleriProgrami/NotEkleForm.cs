@@ -138,26 +138,27 @@ namespace windowsAppCsharpOgrenciIsleriProgrami
                 decimal Finals = row["Finals"] != DBNull.Value ? Convert.ToDecimal(row["Finals"]) : 0;
                 decimal Homeworks = row["Homeworks"] != DBNull.Value ? Convert.ToDecimal(row["Homeworks"]) : 0;
                 decimal Quiz = row["Quiz"] != DBNull.Value ? Convert.ToDecimal(row["Quiz"]) : 0;
-                decimal MakeUp = row["MakeUp"] != DBNull.Value ? Convert.ToDecimal(row["MakeUp"]) : 0;
+                //var MakeUp = row["MakeUp"];
+                decimal? MakeUp = row["MakeUp"] != DBNull.Value ? Convert.ToDecimal(row["MakeUp"]) : (decimal?)null;
 
-                if(Finals>=50)
+                if (Finals>=50)
                 {
-                    if (Finals >= 50 && MakeUp == null)
+                    if (MakeUp == null)
                     {
                         decimal average = (Midterm * 0.3m) + (Finals * 0.4m) + (Homeworks * 0.1m) + (Quiz * 0.1m); row["TermGrade"] = average;
                         averageSave(average, id);
                     }
 
-                    else if (Finals >= 50 && MakeUp != null)
+                    else if (MakeUp != null)
                     {
-                        decimal average = (Midterm * 0.3m) + (Homeworks * 0.1m) + (Quiz * 0.1m) + (MakeUp * 0.4m); row["TermGrade"] = average;
+                        decimal average = (Midterm * 0.3m) + (Homeworks * 0.1m) + (Quiz * 0.1m) + (Convert.ToDecimal(MakeUp) * 0.4m); row["TermGrade"] = average;
                         averageSave(average,id);
                     }
                 }
 
                 else
                 {
-                    decimal average = (Midterm * 0.3m) + (Homeworks * 0.1m) + (Quiz * 0.1m) + (MakeUp * 0.4m); row["TermGrade"] = average;
+                    decimal average = (Midterm * 0.3m) + (Homeworks * 0.1m) + (Quiz * 0.1m) + (Convert.ToDecimal(MakeUp) * 0.4m); row["TermGrade"] = average;
                     averageSave(average,id);
                 }
             }
@@ -174,3 +175,6 @@ namespace windowsAppCsharpOgrenciIsleriProgrami
         }
     }
 }
+
+
+// artık bu dersin ödevi var bu dersin ödevinin yğüzdesi bilmemm ne yaapcam  bunu ders ekle sütuundan yapabiliirm anca:)
