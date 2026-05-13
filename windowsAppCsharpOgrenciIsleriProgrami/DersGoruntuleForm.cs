@@ -28,7 +28,7 @@ namespace windowsAppCsharpOgrenciIsleriProgrami
         }
         public void list(int dersId)
         {
-            string sql = "Select Name,Code from Class where Id=@dersId ";
+            string sql = "Select Name, Code, PerMid, PerFin, PerHom, PerQuiz from Class where Id=@dersId ";
 
             using (SqlCommand command = new SqlCommand(sql, contact))
             {
@@ -42,24 +42,64 @@ namespace windowsAppCsharpOgrenciIsleriProgrami
                 if (dataTable.Rows.Count > 0)
                 {
                     DataRow row = dataTable.Rows[0];
-                    textBox1.Text = row["Name"].ToString();
-                    textBox2.Text = row["Code"].ToString();
+                    txtDersAd.Text = row["Name"].ToString();
+                    txtDersKod.Text = row["Code"].ToString();
+                    txtVize.Text = row["PerMid"].ToString();
+                    txtFinal.Text = row["PerFin"].ToString();
+                    txtOdev.Text = row["PerHom"].ToString();
+                    txtQuiz.Text = row["PerQuiz"].ToString();
                 }
             }
         }
 
+        public bool add()
+        {
+            double percentageMidterm = Convert.ToDouble(txtVize.Text);
+            double percentageFinal = Convert.ToDouble(txtFinal.Text);
+            double percentageHomework = Convert.ToDouble(txtOdev.Text);
+            //double percentageQuiz = Convert.ToDouble(txtQuiz.Text);
+
+            double almostPercentage = percentageMidterm + percentageFinal + percentageHomework;
+
+            if (almostPercentage <= 100)
+            {
+                double remainingPercentage = 100 - almostPercentage;
+                txtQuiz.Text = remainingPercentage.ToString();
+            }
+            // textbox6 neden kullanıcı girişine açık
+            else
+            {
+                MessageBox.Show("Hatalı giriş yaptınız, tekrar giriniz.");
+                return false;
+            }
+
+            return true;
+        }
+
         private void button1_Click(object sender, EventArgs e)
         {
-            string sql = "UPDATE Class SET Name=@Name,Code=@Code WHERE Id=@dersId";
-            SqlCommand command= new SqlCommand(sql,contact);
+            
+
+            if(!add()) return;
+
+            string sql = "UPDATE Class SET Name=@Name, Code=@Code, PerMid=@perMid, PerFin=@perFin, PerHom=@perHom, PerQuiz=@perQuiz WHERE Id=@dersId";
+            SqlCommand command = new SqlCommand(sql, contact);
+
 
             command.Parameters.AddWithValue("@dersId", dersId);
-            command.Parameters.AddWithValue("@Name", textBox1.Text);
-            command.Parameters.AddWithValue("@Code", textBox2.Text);
+            command.Parameters.AddWithValue("@Name", txtDersAd.Text);
+            command.Parameters.AddWithValue("@Code", txtDersKod.Text);
+            command.Parameters.AddWithValue("@perMid", Convert.ToDouble(txtVize.Text));
+            command.Parameters.AddWithValue("@perFin", Convert.ToDouble(txtFinal.Text));
+            command.Parameters.AddWithValue("@perHom", Convert.ToDouble(txtOdev.Text));
+            command.Parameters.AddWithValue("@perQuiz", Convert.ToDouble(txtQuiz.Text));
             contact.Open();
             command.ExecuteNonQuery();
             contact.Close();
-            MessageBox.Show("Ders başarıyla güncellendi."); 
+
+            MessageBox.Show("Ders başarıyla güncellendi.");
+
+            Close();
         }
     }
 }

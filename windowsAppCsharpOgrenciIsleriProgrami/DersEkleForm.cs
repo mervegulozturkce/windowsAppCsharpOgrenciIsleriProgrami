@@ -60,8 +60,9 @@ namespace windowsAppCsharpOgrenciIsleriProgrami
             command.Parameters.AddWithValue("@perMid", percentageMidterm);
             command.Parameters.AddWithValue("@perFin", percentageFinal);
             command.Parameters.AddWithValue("@perHom", percentageHomework);
+            command.Parameters.AddWithValue("@perQuiz", percentageQuiz);
 
-            problemWithTextBox6();
+           // problemWithTextBox();
 
             //command.Parameters.AddWithValue("@perQuiz", percentageQuiz);
 
@@ -86,12 +87,13 @@ namespace windowsAppCsharpOgrenciIsleriProgrami
 
             Close();       
         }
-        public void problemWithTextBox6()
-        {
-            string sql= "Insert into Class (perQuiz) values (@perQuiz)";
 
-            double percentageQuiz = Convert.ToDouble(textBox6.Text);
-            command.Parameters.AddWithValue("@perQuiz", percentageQuiz);
-        }
+        //public void problemWithTextBox()
+        //{
+        //    string sql= "Insert into Class (perQuiz) values (@perQuiz)";
+
+        //    double percentageQuiz = Convert.ToDouble(textBox6.Text);
+        //    command.Parameters.AddWithValue("@perQuiz", percentageQuiz);
+        //}
     }
 }
