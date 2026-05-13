@@ -57,7 +57,6 @@ namespace windowsAppCsharpOgrenciIsleriProgrami
             double percentageMidterm = Convert.ToDouble(txtVize.Text);
             double percentageFinal = Convert.ToDouble(txtFinal.Text);
             double percentageHomework = Convert.ToDouble(txtOdev.Text);
-            //double percentageQuiz = Convert.ToDouble(txtQuiz.Text);
 
             double almostPercentage = percentageMidterm + percentageFinal + percentageHomework;
 
@@ -66,7 +65,7 @@ namespace windowsAppCsharpOgrenciIsleriProgrami
                 double remainingPercentage = 100 - almostPercentage;
                 txtQuiz.Text = remainingPercentage.ToString();
             }
-            // textbox6 neden kullanıcı girişine açık
+
             else
             {
                 MessageBox.Show("Hatalı giriş yaptınız, tekrar giriniz.");

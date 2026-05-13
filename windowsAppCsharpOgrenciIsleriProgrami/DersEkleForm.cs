@@ -32,39 +32,32 @@ namespace windowsAppCsharpOgrenciIsleriProgrami
 
             command = new SqlCommand(sql, contact);
 
-            double percentageMidterm = Convert.ToDouble(textBox3.Text);
-            double percentageFinal = Convert.ToDouble(textBox4.Text);
-            double percentageHomework = Convert.ToDouble(textBox5.Text);
-            double percentageQuiz = Convert.ToDouble(textBox6.Text);
+            double percentageMidterm = Convert.ToDouble(txtVize.Text);
+            double percentageFinal = Convert.ToDouble(txtFinal.Text);
+            double percentageHomework = Convert.ToDouble(txtOdev.Text);
 
             double almostPercentage = percentageMidterm + percentageFinal + percentageHomework;
 
             if (almostPercentage <= 100)
             {
                 double remainingPercentage = 100 - almostPercentage;
-                textBox6.Text = remainingPercentage.ToString();
+                txtQuiz.Text = remainingPercentage.ToString();
             }
 
             else
             {
-                textBox3.Clear();
-                textBox4.Clear();
-                textBox5.Clear();
-                textBox6.Clear();
                 MessageBox.Show("Hatalı giriş yaptınız, tekrar giriniz.");
                 return false;
             }
 
-            command.Parameters.AddWithValue("@Name", textBox1.Text);
-            command.Parameters.AddWithValue("@Code", textBox2.Text);
+            double percentageQuiz = Convert.ToDouble(txtQuiz.Text);
+
+            command.Parameters.AddWithValue("@Name", txtDersAd.Text);
+            command.Parameters.AddWithValue("@Code", txtDersKod.Text);
             command.Parameters.AddWithValue("@perMid", percentageMidterm);
             command.Parameters.AddWithValue("@perFin", percentageFinal);
             command.Parameters.AddWithValue("@perHom", percentageHomework);
             command.Parameters.AddWithValue("@perQuiz", percentageQuiz);
-
-           // problemWithTextBox();
-
-            //command.Parameters.AddWithValue("@perQuiz", percentageQuiz);
 
             contact.Open();
             command.ExecuteNonQuery();
@@ -87,13 +80,5 @@ namespace windowsAppCsharpOgrenciIsleriProgrami
 
             Close();       
         }
-
-        //public void problemWithTextBox()
-        //{
-        //    string sql= "Insert into Class (perQuiz) values (@perQuiz)";
-
-        //    double percentageQuiz = Convert.ToDouble(textBox6.Text);
-        //    command.Parameters.AddWithValue("@perQuiz", percentageQuiz);
-        //}
     }
 }

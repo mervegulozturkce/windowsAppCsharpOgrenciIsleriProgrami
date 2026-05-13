@@ -29,18 +29,18 @@
         private void InitializeComponent()
         {
             label1 = new Label();
-            textBox1 = new TextBox();
+            txtDersAd = new TextBox();
             label2 = new Label();
-            textBox2 = new TextBox();
+            txtDersKod = new TextBox();
             button1 = new Button();
             label3 = new Label();
             label4 = new Label();
             label5 = new Label();
             label6 = new Label();
-            textBox3 = new TextBox();
-            textBox4 = new TextBox();
-            textBox5 = new TextBox();
-            textBox6 = new TextBox();
+            txtVize = new TextBox();
+            txtFinal = new TextBox();
+            txtOdev = new TextBox();
+            txtQuiz = new TextBox();
             label7 = new Label();
             label8 = new Label();
             label9 = new Label();
@@ -56,12 +56,12 @@
             label1.TabIndex = 0;
             label1.Text = "Eklemek istediğiniz dersin adını giriniz:";
             // 
-            // textBox1
+            // txtDersAd
             // 
-            textBox1.Location = new Point(12, 32);
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(214, 27);
-            textBox1.TabIndex = 1;
+            txtDersAd.Location = new Point(12, 32);
+            txtDersAd.Name = "txtDersAd";
+            txtDersAd.Size = new Size(214, 27);
+            txtDersAd.TabIndex = 1;
             // 
             // label2
             // 
@@ -72,16 +72,16 @@
             label2.TabIndex = 2;
             label2.Text = "Adını girdiğiniz dersin kodunu giriniz:";
             // 
-            // textBox2
+            // txtDersKod
             // 
-            textBox2.Location = new Point(12, 98);
-            textBox2.Name = "textBox2";
-            textBox2.Size = new Size(214, 27);
-            textBox2.TabIndex = 3;
+            txtDersKod.Location = new Point(12, 98);
+            txtDersKod.Name = "txtDersKod";
+            txtDersKod.Size = new Size(214, 27);
+            txtDersKod.TabIndex = 3;
             // 
             // button1
             // 
-            button1.Location = new Point(492, 52);
+            button1.Location = new Point(420, 55);
             button1.Name = "button1";
             button1.Size = new Size(121, 31);
             button1.TabIndex = 4;
@@ -125,33 +125,34 @@
             label6.TabIndex = 8;
             label6.Text = "Dersin dönem sonu ortalamasına quizin yüzde kaç etki edeceğini yazınız:";
             // 
-            // textBox3
+            // txtVize
             // 
-            textBox3.Location = new Point(12, 183);
-            textBox3.Name = "textBox3";
-            textBox3.Size = new Size(214, 27);
-            textBox3.TabIndex = 9;
+            txtVize.Location = new Point(12, 183);
+            txtVize.Name = "txtVize";
+            txtVize.Size = new Size(214, 27);
+            txtVize.TabIndex = 9;
             // 
-            // textBox4
+            // txtFinal
             // 
-            textBox4.Location = new Point(12, 248);
-            textBox4.Name = "textBox4";
-            textBox4.Size = new Size(214, 27);
-            textBox4.TabIndex = 10;
+            txtFinal.Location = new Point(12, 248);
+            txtFinal.Name = "txtFinal";
+            txtFinal.Size = new Size(214, 27);
+            txtFinal.TabIndex = 10;
             // 
-            // textBox5
+            // txtOdev
             // 
-            textBox5.Location = new Point(12, 316);
-            textBox5.Name = "textBox5";
-            textBox5.Size = new Size(214, 27);
-            textBox5.TabIndex = 11;
+            txtOdev.Location = new Point(12, 316);
+            txtOdev.Name = "txtOdev";
+            txtOdev.Size = new Size(214, 27);
+            txtOdev.TabIndex = 11;
             // 
-            // textBox6
+            // txtQuiz
             // 
-            textBox6.Location = new Point(12, 385);
-            textBox6.Name = "textBox6";
-            textBox6.Size = new Size(214, 27);
-            textBox6.TabIndex = 12;
+            txtQuiz.Location = new Point(12, 385);
+            txtQuiz.Name = "txtQuiz";
+            txtQuiz.ReadOnly = true;
+            txtQuiz.Size = new Size(214, 27);
+            txtQuiz.TabIndex = 12;
             // 
             // label7
             // 
@@ -198,18 +199,18 @@
             Controls.Add(label9);
             Controls.Add(label8);
             Controls.Add(label7);
-            Controls.Add(textBox6);
-            Controls.Add(textBox5);
-            Controls.Add(textBox4);
-            Controls.Add(textBox3);
+            Controls.Add(txtQuiz);
+            Controls.Add(txtOdev);
+            Controls.Add(txtFinal);
+            Controls.Add(txtVize);
             Controls.Add(label6);
             Controls.Add(label5);
             Controls.Add(label4);
             Controls.Add(label3);
             Controls.Add(button1);
-            Controls.Add(textBox2);
+            Controls.Add(txtDersKod);
             Controls.Add(label2);
-            Controls.Add(textBox1);
+            Controls.Add(txtDersAd);
             Controls.Add(label1);
             Name = "DersEkleForm";
             Text = "DersEkleForm";
@@ -220,18 +221,18 @@
         #endregion
 
         private Label label1;
-        private TextBox textBox1;
+        private TextBox txtDersAd;
         private Label label2;
-        private TextBox textBox2;
+        private TextBox txtDersKod;
         private Button button1;
         private Label label3;
         private Label label4;
         private Label label5;
         private Label label6;
-        private TextBox textBox3;
-        private TextBox textBox4;
-        private TextBox textBox5;
-        private TextBox textBox6;
+        private TextBox txtVize;
+        private TextBox txtFinal;
+        private TextBox txtOdev;
+        private TextBox txtQuiz;
         private Label label7;
         private Label label8;
         private Label label9;
