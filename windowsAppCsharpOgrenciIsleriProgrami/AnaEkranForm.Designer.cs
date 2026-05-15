@@ -1,6 +1,6 @@
 ﻿namespace windowsAppCsharpOgrenciIsleriProgrami
 {
-    partial class AnaEkran
+    partial class AnaEkranForm
     {
         /// <summary>
         /// Required designer variable.

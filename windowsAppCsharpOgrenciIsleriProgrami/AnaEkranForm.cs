@@ -10,11 +10,11 @@ using System.Windows.Forms;
 
 namespace windowsAppCsharpOgrenciIsleriProgrami
 {
-    public partial class AnaEkran : Form
+    public partial class AnaEkranForm : Form
     {
         DersList dersList;
         OgrenciList ogrenciList;
-        public AnaEkran()
+        public AnaEkranForm()
         {
             InitializeComponent();
         }
