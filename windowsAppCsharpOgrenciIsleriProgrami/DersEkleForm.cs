@@ -28,7 +28,7 @@ namespace windowsAppCsharpOgrenciIsleriProgrami
         }
         public bool add()
         {
-            string sql = "Insert into Class (Name,Code,perMid,perFin,perHom,perQuiz) values (@Name,@Code,@perMid,@perFin,@perHom,@perQuiz)";
+            string sql = "Insert into Class (Name,Code,perMid,perFin,perHom,perQuiz,perMakeUp) values (@Name,@Code,@perMid,@perFin,@perHom,@perQuiz,@perMakeUp)";
 
             command = new SqlCommand(sql, contact);
 
@@ -58,6 +58,7 @@ namespace windowsAppCsharpOgrenciIsleriProgrami
             command.Parameters.AddWithValue("@perFin", percentageFinal);
             command.Parameters.AddWithValue("@perHom", percentageHomework);
             command.Parameters.AddWithValue("@perQuiz", percentageQuiz);
+            command.Parameters.AddWithValue("@perMakeUp", percentageFinal);
 
             contact.Open();
             command.ExecuteNonQuery();
@@ -67,7 +68,7 @@ namespace windowsAppCsharpOgrenciIsleriProgrami
         }
         private void button1_Click(object sender, EventArgs e)
         {
-            if(!add()) return;
+            if (!add()) return;
 
             string sql = "Select * from Class";
 
@@ -78,7 +79,7 @@ namespace windowsAppCsharpOgrenciIsleriProgrami
 
             MessageBox.Show("Ders ekleniyor...");
 
-            Close();       
+            Close();
         }
     }
 }

@@ -34,7 +34,6 @@
             txtDersKod = new TextBox();
             button1 = new Button();
             label3 = new Label();
-            label4 = new Label();
             label5 = new Label();
             label6 = new Label();
             txtVize = new TextBox();
@@ -45,6 +44,7 @@
             label8 = new Label();
             label9 = new Label();
             label10 = new Label();
+            label11 = new Label();
             SuspendLayout();
             // 
             // label1
@@ -66,7 +66,7 @@
             // label2
             // 
             label2.AutoSize = true;
-            label2.Location = new Point(12, 75);
+            label2.Location = new Point(12, 66);
             label2.Name = "label2";
             label2.Size = new Size(256, 20);
             label2.TabIndex = 2;
@@ -74,7 +74,7 @@
             // 
             // txtDersKod
             // 
-            txtDersKod.Location = new Point(12, 98);
+            txtDersKod.Location = new Point(12, 89);
             txtDersKod.Name = "txtDersKod";
             txtDersKod.Size = new Size(214, 27);
             txtDersKod.TabIndex = 3;
@@ -92,25 +92,16 @@
             // label3
             // 
             label3.AutoSize = true;
-            label3.Location = new Point(12, 160);
+            label3.Location = new Point(12, 139);
             label3.Name = "label3";
             label3.Size = new Size(495, 20);
             label3.TabIndex = 5;
             label3.Text = "Dersin dönem sonu ortalamasına vizenin yüzde kaç etki edeceğini yazınız:";
             // 
-            // label4
-            // 
-            label4.AutoSize = true;
-            label4.Location = new Point(12, 225);
-            label4.Name = "label4";
-            label4.Size = new Size(490, 20);
-            label4.TabIndex = 6;
-            label4.Text = "Dersin dönem sonu ortalamasına finalin yüzde kaç etki edeceğini yazınız:";
-            // 
             // label5
             // 
             label5.AutoSize = true;
-            label5.Location = new Point(12, 293);
+            label5.Location = new Point(12, 285);
             label5.Name = "label5";
             label5.Size = new Size(494, 20);
             label5.TabIndex = 7;
@@ -119,7 +110,7 @@
             // label6
             // 
             label6.AutoSize = true;
-            label6.Location = new Point(12, 362);
+            label6.Location = new Point(12, 353);
             label6.Name = "label6";
             label6.Size = new Size(489, 20);
             label6.TabIndex = 8;
@@ -127,28 +118,28 @@
             // 
             // txtVize
             // 
-            txtVize.Location = new Point(12, 183);
+            txtVize.Location = new Point(12, 162);
             txtVize.Name = "txtVize";
             txtVize.Size = new Size(214, 27);
             txtVize.TabIndex = 9;
             // 
             // txtFinal
             // 
-            txtFinal.Location = new Point(12, 248);
+            txtFinal.Location = new Point(12, 243);
             txtFinal.Name = "txtFinal";
             txtFinal.Size = new Size(214, 27);
             txtFinal.TabIndex = 10;
             // 
             // txtOdev
             // 
-            txtOdev.Location = new Point(12, 316);
+            txtOdev.Location = new Point(12, 308);
             txtOdev.Name = "txtOdev";
             txtOdev.Size = new Size(214, 27);
             txtOdev.TabIndex = 11;
             // 
             // txtQuiz
             // 
-            txtQuiz.Location = new Point(12, 385);
+            txtQuiz.Location = new Point(12, 376);
             txtQuiz.Name = "txtQuiz";
             txtQuiz.ReadOnly = true;
             txtQuiz.Size = new Size(214, 27);
@@ -157,7 +148,7 @@
             // label7
             // 
             label7.AutoSize = true;
-            label7.Location = new Point(513, 160);
+            label7.Location = new Point(513, 139);
             label7.Name = "label7";
             label7.Size = new Size(297, 20);
             label7.TabIndex = 13;
@@ -166,7 +157,7 @@
             // label8
             // 
             label8.AutoSize = true;
-            label8.Location = new Point(508, 225);
+            label8.Location = new Point(12, 220);
             label8.Name = "label8";
             label8.Size = new Size(297, 20);
             label8.TabIndex = 14;
@@ -175,7 +166,7 @@
             // label9
             // 
             label9.AutoSize = true;
-            label9.Location = new Point(512, 293);
+            label9.Location = new Point(512, 285);
             label9.Name = "label9";
             label9.Size = new Size(297, 20);
             label9.TabIndex = 15;
@@ -184,17 +175,27 @@
             // label10
             // 
             label10.AutoSize = true;
-            label10.Location = new Point(507, 362);
+            label10.Location = new Point(507, 353);
             label10.Name = "label10";
             label10.Size = new Size(297, 20);
             label10.TabIndex = 16;
             label10.Text = "(Rakamlarla, sadece sayıyı yazmanız yeterli)";
+            // 
+            // label11
+            // 
+            label11.AutoSize = true;
+            label11.Location = new Point(12, 200);
+            label11.Name = "label11";
+            label11.Size = new Size(768, 20);
+            label11.TabIndex = 18;
+            label11.Text = "Dersin dönem sonu ortalamasına finalin yüzde kaç etki edeceğini yazınız:(Bütünleme de aynı oranda etkileyecektir.)";
             // 
             // DersEkleForm
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(846, 467);
+            Controls.Add(label11);
             Controls.Add(label10);
             Controls.Add(label9);
             Controls.Add(label8);
@@ -205,7 +206,6 @@
             Controls.Add(txtVize);
             Controls.Add(label6);
             Controls.Add(label5);
-            Controls.Add(label4);
             Controls.Add(label3);
             Controls.Add(button1);
             Controls.Add(txtDersKod);
@@ -226,7 +226,6 @@
         private TextBox txtDersKod;
         private Button button1;
         private Label label3;
-        private Label label4;
         private Label label5;
         private Label label6;
         private TextBox txtVize;
@@ -237,5 +236,6 @@
         private Label label8;
         private Label label9;
         private Label label10;
+        private Label label11;
     }
 }

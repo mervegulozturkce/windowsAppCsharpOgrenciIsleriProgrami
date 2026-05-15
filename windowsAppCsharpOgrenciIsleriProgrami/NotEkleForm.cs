@@ -5,6 +5,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Security.Cryptography.X509Certificates;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -18,6 +19,7 @@ namespace windowsAppCsharpOgrenciIsleriProgrami
         SqlConnection contact;
         SqlCommand command;
         SqlDataAdapter adapter;
+
         int ogrenciId;
         public NotEkleForm(int _ogrenciId)
         {
@@ -28,7 +30,7 @@ namespace windowsAppCsharpOgrenciIsleriProgrami
 
             string sql = @"
             INSERT INTO Results (StudentId, ClassId)
-            SELECT @StudentId, C.Id
+            SELECT @StudentId, C.Id   
             FROM Class C
             WHERE C.Id NOT IN (SELECT ClassId FROM Results WHERE StudentId = @StudentId)";
 
@@ -94,10 +96,10 @@ namespace windowsAppCsharpOgrenciIsleriProgrami
             foreach (DataRow row in dataSource.Rows)
             {
                 decimal Midterm = row["Midterm"] != DBNull.Value ? Convert.ToDecimal(row["Midterm"]) : 0;
-                decimal Finals = row["Finals"] != DBNull.Value ? Convert.ToDecimal(row["Finals"]) : 0;
+                decimal Final = row["Finals"] != DBNull.Value ? Convert.ToDecimal(row["Finals"]) : 0;
                 decimal Homeworks = row["Homeworks"] != DBNull.Value ? Convert.ToDecimal(row["Homeworks"]) : 0;
                 decimal Quiz = row["Quiz"] != DBNull.Value ? Convert.ToDecimal(row["Quiz"]) : 0;
-                var MakeUp = row["MakeUp"];
+                decimal MakeUp = row["MakeUp"] != DBNull.Value ? Convert.ToDecimal(row["MakeUp"]) : 0;
 
                 if (row["Id"] == DBNull.Value) continue;
 
@@ -106,7 +108,7 @@ namespace windowsAppCsharpOgrenciIsleriProgrami
                 using (SqlCommand command = new SqlCommand(sql, contact))
                 {
                     command.Parameters.AddWithValue("@Midterm", Midterm);
-                    command.Parameters.AddWithValue("@Finals", Finals);
+                    command.Parameters.AddWithValue("@Finals", Final);
                     command.Parameters.AddWithValue("@Homeworks", Homeworks);
                     command.Parameters.AddWithValue("@Quiz", Quiz);
                     command.Parameters.AddWithValue("@MakeUp", MakeUp);
@@ -115,11 +117,12 @@ namespace windowsAppCsharpOgrenciIsleriProgrami
                     command.ExecuteNonQuery();
                 }
             }
-            contact.Close();
 
             MessageBox.Show("Kaydedildi!");
 
             averageCalculate();
+
+            contact.Close();
 
             gridFill(ogrenciId);
 
@@ -138,43 +141,73 @@ namespace windowsAppCsharpOgrenciIsleriProgrami
                 decimal Finals = row["Finals"] != DBNull.Value ? Convert.ToDecimal(row["Finals"]) : 0;
                 decimal Homeworks = row["Homeworks"] != DBNull.Value ? Convert.ToDecimal(row["Homeworks"]) : 0;
                 decimal Quiz = row["Quiz"] != DBNull.Value ? Convert.ToDecimal(row["Quiz"]) : 0;
-                //var MakeUp = row["MakeUp"];
-                decimal? MakeUp = row["MakeUp"] != DBNull.Value ? Convert.ToDecimal(row["MakeUp"]) : (decimal?)null;
+                decimal MakeUp = row["MakeUp"] != DBNull.Value ? Convert.ToDecimal(row["MakeUp"]) : 0;
 
-                if (Finals>=50)
+                decimal PerMid, PerFin, PerHom, PerQuiz, PerMakeUp;
+
+                percentageCalc( out PerMid, out PerFin, out PerHom, out PerQuiz, out PerMakeUp);
+
+                if (Finals >= 50)
                 {
                     if (MakeUp == null)
                     {
-                        decimal average = (Midterm * 0.3m) + (Finals * 0.4m) + (Homeworks * 0.1m) + (Quiz * 0.1m); row["TermGrade"] = average;
+                        decimal average = (Midterm * PerMid / 100) + (Finals * PerFin / 100) + (Homeworks * PerHom / 100) + (Quiz * PerQuiz / 100); row["TermGrade"] = average;
                         averageSave(average, id);
                     }
 
                     else if (MakeUp != null)
                     {
-                        decimal average = (Midterm * 0.3m) + (Homeworks * 0.1m) + (Quiz * 0.1m) + (Convert.ToDecimal(MakeUp) * 0.4m); row["TermGrade"] = average;
-                        averageSave(average,id);
+                        decimal average = (Midterm * PerMid / 100) + (Homeworks * PerHom / 100) + (Quiz * PerQuiz / 100) + (Convert.ToDecimal(MakeUp) * PerMakeUp / 100); row["TermGrade"] = average;
+                        averageSave(average, id);
                     }
                 }
 
                 else
                 {
-                    decimal average = (Midterm * 0.3m) + (Homeworks * 0.1m) + (Quiz * 0.1m) + (Convert.ToDecimal(MakeUp) * 0.4m); row["TermGrade"] = average;
-                    averageSave(average,id);
+                    decimal average = (Midterm * PerMid / 100) + (Homeworks * PerHom / 100) + (Quiz * PerQuiz / 100) + (Convert.ToDecimal(MakeUp) * PerMakeUp / 100); row["TermGrade"] = average;
+                    averageSave(average, id);
+                }
+
+            }
+        }
+
+        public void percentageCalc(out decimal PerMid, out decimal PerFin, out decimal PerHom, out decimal PerQuiz, out decimal PerMakeUp)
+        {
+            PerMid = 0;
+            PerFin = 0;
+            PerHom = 0;
+            PerQuiz = 0;
+            PerMakeUp = 0;
+
+            string sql = "SELECT * FROM Class WHERE Id IN (SELECT ClassId FROM Results WHERE StudentId = @ogrenciId)";
+
+            using (SqlCommand command = new SqlCommand(sql, contact))
+            {
+                command.Parameters.AddWithValue("@ogrenciId", ogrenciId);
+                adapter = new SqlDataAdapter(command);
+                DataTable dataTable = new DataTable();
+                adapter.Fill(dataTable);
+
+                if (dataTable.Rows.Count > 0)
+                {
+                    DataRow row = dataTable.Rows[0];
+                    PerMid = Convert.ToDecimal(row["PerMid"]);
+                    PerFin = Convert.ToDecimal(row["PerFin"]);
+                    PerHom = Convert.ToDecimal(row["PerHom"]);
+                    PerQuiz = Convert.ToDecimal(row["PerQuiz"]);
+                    PerMakeUp = Convert.ToDecimal(row["PerMakeUp"]);
                 }
             }
         }
+
         public void averageSave(decimal average,int id)
         {
             string sql = "UPDATE Results SET TermGrade=@TermGrade WHERE Id=@id";
             command = new SqlCommand(sql, contact);
             command.Parameters.AddWithValue("@TermGrade", average);
             command.Parameters.AddWithValue("@id", id);
-            contact.Open();
+
             command.ExecuteNonQuery();
-            contact.Close();
         }
     }
 }
-
-
-// artık bu dersin ödevi var bu dersin ödevinin yğüzdesi bilmemm ne yaapcam  bunu ders ekle sütuundan yapabiliirm anca:)
