@@ -30,15 +30,15 @@
         {
             label2 = new Label();
             label3 = new Label();
-            textBox2 = new TextBox();
+            txtNumara = new TextBox();
             label4 = new Label();
             label5 = new Label();
             label6 = new Label();
             label7 = new Label();
-            textBox3 = new TextBox();
-            textBox5 = new TextBox();
-            textBox6 = new TextBox();
-            textBox8 = new TextBox();
+            txtSoyad = new TextBox();
+            txtMemleket = new TextBox();
+            txtYas = new TextBox();
+            txtAd = new TextBox();
             button1 = new Button();
             button2 = new Button();
             SuspendLayout();
@@ -61,12 +61,12 @@
             label3.TabIndex = 5;
             label3.Text = "Öğrencinin okul numarası:";
             // 
-            // textBox2
+            // txtNumara
             // 
-            textBox2.Location = new Point(14, 83);
-            textBox2.Name = "textBox2";
-            textBox2.Size = new Size(140, 27);
-            textBox2.TabIndex = 6;
+            txtNumara.Location = new Point(14, 83);
+            txtNumara.Name = "txtNumara";
+            txtNumara.Size = new Size(140, 27);
+            txtNumara.TabIndex = 6;
             // 
             // label4
             // 
@@ -104,33 +104,33 @@
             label7.TabIndex = 10;
             label7.Text = "Öğrencinin yaşı:";
             // 
-            // textBox3
+            // txtSoyad
             // 
-            textBox3.Location = new Point(14, 209);
-            textBox3.Name = "textBox3";
-            textBox3.Size = new Size(140, 27);
-            textBox3.TabIndex = 11;
+            txtSoyad.Location = new Point(14, 209);
+            txtSoyad.Name = "txtSoyad";
+            txtSoyad.Size = new Size(140, 27);
+            txtSoyad.TabIndex = 11;
             // 
-            // textBox5
+            // txtMemleket
             // 
-            textBox5.Location = new Point(14, 342);
-            textBox5.Name = "textBox5";
-            textBox5.Size = new Size(140, 27);
-            textBox5.TabIndex = 13;
+            txtMemleket.Location = new Point(14, 342);
+            txtMemleket.Name = "txtMemleket";
+            txtMemleket.Size = new Size(140, 27);
+            txtMemleket.TabIndex = 13;
             // 
-            // textBox6
+            // txtYas
             // 
-            textBox6.Location = new Point(14, 278);
-            textBox6.Name = "textBox6";
-            textBox6.Size = new Size(140, 27);
-            textBox6.TabIndex = 14;
+            txtYas.Location = new Point(14, 278);
+            txtYas.Name = "txtYas";
+            txtYas.Size = new Size(140, 27);
+            txtYas.TabIndex = 14;
             // 
-            // textBox8
+            // txtAd
             // 
-            textBox8.Location = new Point(14, 146);
-            textBox8.Name = "textBox8";
-            textBox8.Size = new Size(140, 27);
-            textBox8.TabIndex = 16;
+            txtAd.Location = new Point(14, 146);
+            txtAd.Name = "txtAd";
+            txtAd.Size = new Size(140, 27);
+            txtAd.TabIndex = 16;
             // 
             // button1
             // 
@@ -159,15 +159,15 @@
             ClientSize = new Size(751, 416);
             Controls.Add(button2);
             Controls.Add(button1);
-            Controls.Add(textBox8);
-            Controls.Add(textBox6);
-            Controls.Add(textBox5);
-            Controls.Add(textBox3);
+            Controls.Add(txtAd);
+            Controls.Add(txtYas);
+            Controls.Add(txtMemleket);
+            Controls.Add(txtSoyad);
             Controls.Add(label7);
             Controls.Add(label6);
             Controls.Add(label5);
             Controls.Add(label4);
-            Controls.Add(textBox2);
+            Controls.Add(txtNumara);
             Controls.Add(label3);
             Controls.Add(label2);
             Name = "OgrenciGoruntuleForm";
@@ -179,15 +179,15 @@
         #endregion
         private Label label2;
         private Label label3;
-        private TextBox textBox2;
+        private TextBox txtNumara;
         private Label label4;
         private Label label5;
         private Label label6;
         private Label label7;
-        private TextBox textBox3;
-        private TextBox textBox5;
-        private TextBox textBox6;
-        private TextBox textBox8;
+        private TextBox txtSoyad;
+        private TextBox txtMemleket;
+        private TextBox txtYas;
+        private TextBox txtAd;
         private Button button1;
         private Button button2;
     }

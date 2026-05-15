@@ -42,11 +42,11 @@ namespace windowsAppCsharpOgrenciIsleriProgrami
                 if (dataTable.Rows.Count > 0)
                 {
                     DataRow row = dataTable.Rows[0];
-                    textBox8.Text = row["Name"].ToString();
-                    textBox3.Text = row["Surname"].ToString();
-                    textBox6.Text = row["Age"].ToString();
-                    textBox5.Text = row["Hometown"].ToString();
-                    textBox2.Text = row["StudentNumber"].ToString();
+                    txtAd.Text = row["Name"].ToString();
+                    txtSoyad.Text = row["Surname"].ToString();
+                    txtYas.Text = row["Age"].ToString();
+                    txtMemleket.Text = row["Hometown"].ToString();
+                    txtNumara.Text = row["StudentNumber"].ToString();
                 }
             }
         }
@@ -70,11 +70,11 @@ namespace windowsAppCsharpOgrenciIsleriProgrami
             SqlCommand command = new SqlCommand(sql, contact);
 
             command.Parameters.AddWithValue("@ogrenciId", ogrenciId);
-            command.Parameters.AddWithValue("@Name", textBox8.Text);
-            command.Parameters.AddWithValue("@Surname", textBox3.Text);
-            command.Parameters.AddWithValue("@Age", int.Parse(textBox6.Text));
-            command.Parameters.AddWithValue("@Hometown", textBox5.Text);
-            command.Parameters.AddWithValue("@StudentNumber", textBox2.Text);
+            command.Parameters.AddWithValue("@Name", txtAd.Text);
+            command.Parameters.AddWithValue("@Surname", txtSoyad.Text);
+            command.Parameters.AddWithValue("@Age", int.Parse(txtYas.Text));
+            command.Parameters.AddWithValue("@Hometown", txtMemleket.Text);
+            command.Parameters.AddWithValue("@StudentNumber", txtNumara.Text);
 
             contact.Open();
             command.ExecuteNonQuery();

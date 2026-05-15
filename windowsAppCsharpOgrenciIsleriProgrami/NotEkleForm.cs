@@ -58,7 +58,7 @@ namespace windowsAppCsharpOgrenciIsleriProgrami
                 if (dataTable.Rows.Count > 0)
                 {
                     DataRow row = dataTable.Rows[0];
-                    textBox9.Text = $"{row["Name"].ToString()} {row["Surname"].ToString()}";
+                    txtAdSoyad.Text = $"{row["Name"].ToString()} {row["Surname"].ToString()}";
                 }
             }
         }

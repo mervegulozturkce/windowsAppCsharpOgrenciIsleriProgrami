@@ -24,11 +24,11 @@ namespace windowsAppCsharpOgrenciIsleriProgrami
             contact = DataLayer.GetSqlConnection();
             string sql = "Insert into Ogrenci (Name,Surname,Age,Hometown,StudentNumber) values (@Name,@Surname,@Age,@Hometown,@StudentNumber)";
             command = new SqlCommand(sql, contact);
-            command.Parameters.AddWithValue("@Name", textBox2.Text);
-            command.Parameters.AddWithValue("@Surname", textBox3.Text);
-            command.Parameters.AddWithValue("@Age", textBox4.Text);
-            command.Parameters.AddWithValue("@Hometown", textBox5.Text);
-            command.Parameters.AddWithValue("@StudentNumber", textBox1.Text);
+            command.Parameters.AddWithValue("@Name", txtAd.Text);
+            command.Parameters.AddWithValue("@Surname", txtSoyad.Text);
+            command.Parameters.AddWithValue("@Age", txtYas.Text);
+            command.Parameters.AddWithValue("@Hometown", txtMemleket.Text);
+            command.Parameters.AddWithValue("@StudentNumber", txtNumara.Text);
             contact.Open();
             command.ExecuteNonQuery();
             contact.Close();
