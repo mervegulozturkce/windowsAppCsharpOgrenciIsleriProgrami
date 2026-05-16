@@ -40,6 +40,8 @@
             txtMemleket = new TextBox();
             button1 = new Button();
             txtYas = new TextBox();
+            txtParola = new TextBox();
+            label7 = new Label();
             SuspendLayout();
             // 
             // label1
@@ -81,7 +83,7 @@
             // label5
             // 
             label5.AutoSize = true;
-            label5.Location = new Point(27, 257);
+            label5.Location = new Point(27, 252);
             label5.Name = "label5";
             label5.Size = new Size(170, 20);
             label5.TabIndex = 9;
@@ -136,16 +138,35 @@
             // 
             // txtYas
             // 
-            txtYas.Location = new Point(27, 280);
+            txtYas.Location = new Point(27, 275);
             txtYas.Name = "txtYas";
             txtYas.Size = new Size(200, 27);
             txtYas.TabIndex = 17;
+            // 
+            // txtParola
+            // 
+            txtParola.Location = new Point(317, 55);
+            txtParola.Name = "txtParola";
+            txtParola.ReadOnly = true;
+            txtParola.Size = new Size(200, 27);
+            txtParola.TabIndex = 18;
+            // 
+            // label7
+            // 
+            label7.AutoSize = true;
+            label7.Location = new Point(317, 26);
+            label7.Name = "label7";
+            label7.Size = new Size(169, 20);
+            label7.TabIndex = 19;
+            label7.Text = "Öğrencinin geçici şifresi:";
             // 
             // OgrenciEkleForm
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(802, 453);
+            Controls.Add(label7);
+            Controls.Add(txtParola);
             Controls.Add(txtYas);
             Controls.Add(button1);
             Controls.Add(txtMemleket);
@@ -177,5 +198,7 @@
         private TextBox txtMemleket;
         private Button button1;
         private TextBox txtYas;
+        private TextBox txtParola;
+        private Label label7;
     }
 }

@@ -34,23 +34,23 @@ namespace windowsAppCsharpOgrenciIsleriProgrami
 
         public void list(int ogrenciId)
         {
-                string sql = "SELECT Name, Surname FROM Ogrenci WHERE Id = @ogrenciId";
+            string sql = "SELECT Name, Surname FROM Ogrenci WHERE Id = @ogrenciId";
 
-                using (SqlCommand command = new SqlCommand(sql, contact))
+            using (SqlCommand command = new SqlCommand(sql, contact))
+            {
+                command.Parameters.AddWithValue("@ogrenciId", ogrenciId);
+                adapter = new SqlDataAdapter(command);
+                DataTable dataTable = new DataTable();
+                contact.Open();
+                adapter.Fill(dataTable);
+                contact.Close();
+
+                if (dataTable.Rows.Count > 0)
                 {
-                    command.Parameters.AddWithValue("@ogrenciId", ogrenciId);
-                    adapter = new SqlDataAdapter(command);
-                    DataTable dataTable = new DataTable();
-                    contact.Open();
-                    adapter.Fill(dataTable);
-                    contact.Close();
-
-                    if (dataTable.Rows.Count > 0)
-                    {
-                        DataRow row = dataTable.Rows[0];
-                        txtAdSoyad.Text = $"{row["Name"].ToString()} {row["Surname"].ToString()}";
-                    }
+                    DataRow row = dataTable.Rows[0];
+                    txtAdSoyad.Text = $"{row["Name"].ToString()} {row["Surname"].ToString()}";
                 }
+            }
         }
 
         public void gridFill(int ogrenciId)
