@@ -18,8 +18,8 @@ namespace windowsAppCsharpOgrenciIsleriProgrami
         }
         private void button1_Click(object sender, EventArgs e)
         {
-            OgrenciEkleForm ogrenciEkleForm = new OgrenciEkleForm();
-            ogrenciEkleForm.Show();
+            OgrencininKendisiniEklemeForm ogrencininKendisiniEklemeForm = new OgrencininKendisiniEklemeForm();
+            ogrencininKendisiniEklemeForm.Show();
         }
         private void button2_Click(object sender, EventArgs e)
         {

@@ -157,7 +157,7 @@
             button1.Name = "button1";
             button1.Size = new Size(145, 37);
             button1.TabIndex = 16;
-            button1.Text = "Gönder";
+            button1.Text = "Kaydet";
             button1.UseVisualStyleBackColor = true;
             button1.Click += button1_Click;
             // 

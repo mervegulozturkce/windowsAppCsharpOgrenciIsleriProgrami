@@ -161,9 +161,6 @@ namespace windowsAppCsharpOgrenciIsleriProgrami
 
 
 //öğrenci kaydında sadece bu olacak
-//öğretmen öğrenci eklerken random şifre olacak
+
 // öğrenci onu girişte linklabeldan güncelleycek
 
-///////////////buradan aşağısı problemma
-// öğretmen öğrenci ekleeymesin???? ama silebilsin???
-//öpretmen öğrenci eklerken otomatik şifre girilecek ve bu şifre xıkkım olacak sonra öğrenci değiştrebilecek???? buna zaman kalırsa bakrız.
