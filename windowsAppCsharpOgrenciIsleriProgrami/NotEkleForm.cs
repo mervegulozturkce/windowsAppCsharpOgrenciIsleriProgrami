@@ -27,7 +27,6 @@ namespace windowsAppCsharpOgrenciIsleriProgrami
             contact = DataLayer.GetSqlConnection();
             ogrenciId = _ogrenciId;
 
-
             string sql = @"
             INSERT INTO Results (StudentId, ClassId)
             SELECT @StudentId, C.Id   

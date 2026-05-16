@@ -40,11 +40,11 @@
             // label1
             // 
             label1.Font = new Font("Segoe UI", 20F);
-            label1.Location = new Point(171, 37);
+            label1.Location = new Point(183, 44);
             label1.Name = "label1";
-            label1.Size = new Size(399, 42);
+            label1.Size = new Size(374, 42);
             label1.TabIndex = 0;
-            label1.Text = "ÖĞRENCİ OTOMASYONU";
+            label1.Text = "ÖĞRENCİ BİLGİ SİSTEMİ";
             // 
             // label2
             // 

@@ -30,8 +30,8 @@ namespace windowsAppCsharpOgrenciIsleriProgrami
 
         private void button1_Click(object sender, EventArgs e)
         {
-            IfStudent();
-            IfLecturer();
+             IfStudent();
+             IfLecturer();
         }
 
         public void IfStudent()
@@ -53,8 +53,11 @@ namespace windowsAppCsharpOgrenciIsleriProgrami
             {
                 string retrievedUsername = reader["username"].ToString();
                 MessageBox.Show("Giriş başarılı! Hoş geldiniz, " + retrievedUsername + ".");
-                AnaEkranForm anaEkran = new AnaEkranForm();
-                anaEkran.Show();
+
+                int studentId = GetingStudentId();
+
+                NotGoruntulemeForm notGoruntulemeForm = new NotGoruntulemeForm(studentId);
+                notGoruntulemeForm.Show();
 
                 this.Hide();
             }
@@ -64,7 +67,11 @@ namespace windowsAppCsharpOgrenciIsleriProgrami
                 MessageBox.Show("Kullanıcı adı veya parola yanlış. Lütfen tekrar deneyiniz.");
             }
 
-            contact.Close();
+            if (reader != null && !reader.IsClosed)
+                reader.Close();
+
+            if (contact.State == ConnectionState.Open)
+                contact.Close();
         }
 
         public void IfLecturer()
@@ -97,7 +104,11 @@ namespace windowsAppCsharpOgrenciIsleriProgrami
                 MessageBox.Show("Kullanıcı adı veya parola yanlış. Lütfen tekrar deneyiniz.");
             }
 
-            contact.Close();
+            if (reader != null && !reader.IsClosed)
+                reader.Close();
+
+            if (contact.State == ConnectionState.Open)
+                contact.Close();
         }
 
         private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
@@ -105,15 +116,53 @@ namespace windowsAppCsharpOgrenciIsleriProgrami
             KisiEklemeForm kisiEklemeForm = new KisiEklemeForm();
             kisiEklemeForm.Show();
         }
+
+        public int GetingStudentId()
+        {
+            string username = txtAdSoyad.Text.Trim();
+            string password = txtParola.Text.Trim();
+
+            string sql = "SELECT Id FROM Ogrenci WHERE CONCAT(Name, ' ', Surname) = @username AND Password = @password";
+
+            using (SqlConnection localContact = new SqlConnection(contact.ConnectionString))
+            {
+                command = new SqlCommand(sql, localContact);
+
+                command.Parameters.AddWithValue("@username", username);
+                command.Parameters.AddWithValue("@password", password);
+
+                localContact.Open();
+              
+                using (reader = command.ExecuteReader())
+                {
+                    if (reader.Read())
+                    {
+                        int studentId = Convert.ToInt32(reader["Id"]);
+                        this.Hide();
+
+                        return studentId;
+                    }
+                    else
+                    {
+                        MessageBox.Show("Kullanıcı adı veya parola yanlış. Lütfen tekrar deneyiniz.");
+                        return -1;
+                    }
+                }
+            }       
+        }
     }
 }
-
 // butonu çalışır hale getirecm.
 // hoca kısmı benim 1 aydır yğraştığım kısma gidecek
 // öğrenci kısmı sadece not görüntüleyeck
 // sanırım passwordü gizli şekilde eklenebileiyormuş bu şekilde güvenlik açığı oluşuyor
 //öğrenci kendini eklerken password ekleyeck
+// dün eklediğim tümmmm textboxların adına güncelleme gir.
 
+
+//öğrenci kaydında sadece bu olacak
+//öğretmen öğrenci eklerken random şifre olacak
+// öğrenci onu girişte linklabeldan güncelleycek
 
 ///////////////buradan aşağısı problemma
 // öğretmen öğrenci ekleeymesin???? ama silebilsin???
