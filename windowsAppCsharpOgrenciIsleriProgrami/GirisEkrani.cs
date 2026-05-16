@@ -30,11 +30,13 @@ namespace windowsAppCsharpOgrenciIsleriProgrami
 
         private void button1_Click(object sender, EventArgs e)
         {
-             IfStudent();
-             IfLecturer();
+            if (!IfStudent()) 
+            {
+                IfLecturer();
+            }
         }
 
-        public void IfStudent()
+        public bool IfStudent()
         {
             string username = txtAdSoyad.Text.Trim();
             string password = txtParola.Text.Trim();
@@ -60,11 +62,8 @@ namespace windowsAppCsharpOgrenciIsleriProgrami
                 notGoruntulemeForm.Show();
 
                 this.Hide();
-            }
 
-            else
-            {
-                MessageBox.Show("Kullanıcı adı veya parola yanlış. Lütfen tekrar deneyiniz.");
+                return true;
             }
 
             if (reader != null && !reader.IsClosed)
@@ -72,9 +71,11 @@ namespace windowsAppCsharpOgrenciIsleriProgrami
 
             if (contact.State == ConnectionState.Open)
                 contact.Close();
+
+               return false;
         }
 
-        public void IfLecturer()
+        public bool IfLecturer()
         {
             string username = txtAdSoyad.Text.Trim();
             string password = txtParola.Text.Trim();
@@ -97,18 +98,19 @@ namespace windowsAppCsharpOgrenciIsleriProgrami
                 anaEkran.Show();
 
                 this.Hide();
+
+                return true;
             }
 
-            else
-            {
-                MessageBox.Show("Kullanıcı adı veya parola yanlış. Lütfen tekrar deneyiniz.");
-            }
+            MessageBox.Show("Kullanıcı adı veya parola yanlış. Lütfen tekrar deneyiniz.");
 
             if (reader != null && !reader.IsClosed)
                 reader.Close();
 
             if (contact.State == ConnectionState.Open)
                 contact.Close();
+
+            return false;
         }
 
         private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
@@ -152,9 +154,7 @@ namespace windowsAppCsharpOgrenciIsleriProgrami
         }
     }
 }
-// butonu çalışır hale getirecm.
-// hoca kısmı benim 1 aydır yğraştığım kısma gidecek
-// öğrenci kısmı sadece not görüntüleyeck
+
 // sanırım passwordü gizli şekilde eklenebileiyormuş bu şekilde güvenlik açığı oluşuyor
 //öğrenci kendini eklerken password ekleyeck
 // dün eklediğim tümmmm textboxların adına güncelleme gir.
