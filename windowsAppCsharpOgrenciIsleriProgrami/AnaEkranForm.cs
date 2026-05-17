@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.Data.SqlClient;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,24 +13,32 @@ namespace windowsAppCsharpOgrenciIsleriProgrami
 {
     public partial class AnaEkranForm : Form
     {
+        SqlConnection contact;
+        SqlCommand command;
+        SqlDataAdapter adapter;
+
         DersList dersList;
         OgrenciList ogrenciList;
-        public AnaEkranForm()
+        AkademisyenSifreDegistirForm akademisyenSifreDegistirForm;
+
+        string _username;
+       
+        int Id;
+        public AnaEkranForm(string username)
         {
             InitializeComponent();
+            contact = DataLayer.GetSqlConnection();
+            _username = username;
         }
-
         private void MenuOgrenciList_Click(object sender, EventArgs e)
         {
-            if(ogrenciList == null || ogrenciList.IsDisposed)
+            if (ogrenciList == null || ogrenciList.IsDisposed)
             {
                 ogrenciList = new OgrenciList();
                 ogrenciList.MdiParent = this;
                 ogrenciList.Show();
             }
-           
         }
-
         private void menuDersList_Click(object sender, EventArgs e)
         {
             if (dersList == null || dersList.IsDisposed)
@@ -37,8 +46,33 @@ namespace windowsAppCsharpOgrenciIsleriProgrami
                 dersList = new DersList();
                 dersList.MdiParent = this;
                 dersList.Show();
-             
-            }            
+
+            }
+        }
+        private void şifreGüncelleToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            int Id = 0;
+
+            string sql = "SELECT Id FROM Akademisyen WHERE CONCAT(Name, ' ', Surname) = @username";
+
+            using (SqlCommand command = new SqlCommand(sql, contact))
+            {
+                command.Parameters.AddWithValue("@username", _username);
+                contact.Open();
+
+                object result = command.ExecuteScalar();
+                if (result != null)
+                    Id = Convert.ToInt32(result);       
+
+                contact.Close();
+            }
+
+            if (akademisyenSifreDegistirForm == null || akademisyenSifreDegistirForm.IsDisposed)
+            {
+                akademisyenSifreDegistirForm = new AkademisyenSifreDegistirForm(Id);
+                akademisyenSifreDegistirForm.MdiParent = this;
+                akademisyenSifreDegistirForm.Show();
+            }
         }
     }
 }

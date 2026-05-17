@@ -94,7 +94,7 @@ namespace windowsAppCsharpOgrenciIsleriProgrami
             {
                 string retrievedUsername = reader["username"].ToString();
                 MessageBox.Show("Giriş başarılı! Hoş geldiniz, " + retrievedUsername + ".");
-                AnaEkranForm anaEkran = new AnaEkranForm();
+                AnaEkranForm anaEkran = new AnaEkranForm(username);
                 anaEkran.Show();
 
                 this.Hide();
@@ -155,12 +155,10 @@ namespace windowsAppCsharpOgrenciIsleriProgrami
     }
 }
 
-// sanırım passwordü gizli şekilde eklenebileiyormuş bu şekilde güvenlik açığı oluşuyor
-//öğrenci kendini eklerken password ekleyeck
-// dün eklediğim tümmmm textboxların adına güncelleme gir.
 
+// linklabeldan giridiğin öğrenci akademisyen kısmındaki öğrenci ekleyi kaldrı yani öğrenciyi sadece akademikler ekelsin
 
-//öğrenci kaydında sadece bu olacak
-
-// öğrenci onu girişte linklabeldan güncelleycek
-
+//gitteki olaylara bak
+// git düzenini  prpje hakkındaki  bilgileri yaz
+// gitini public tarzı bişey vrdı ayarlardsan ponu yap
+// akşam git linkini hocaya pushla:))

@@ -11,14 +11,14 @@ using System.Windows.Forms;
 
 namespace windowsAppCsharpOgrenciIsleriProgrami
 {
-    public partial class SifreDegistirForm : Form
+    public partial class OgrenciSifreDegistirForm : Form
     {
         SqlConnection contact;
         SqlCommand command;
         SqlDataAdapter adapter;
 
         int ogrenciId;
-        public SifreDegistirForm(int _ogrenciId)
+        public OgrenciSifreDegistirForm(int _ogrenciId)
         {
             InitializeComponent();
             contact = DataLayer.GetSqlConnection();

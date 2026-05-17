@@ -1,6 +1,6 @@
 ﻿namespace windowsAppCsharpOgrenciIsleriProgrami
 {
-    partial class SifreDegistirForm
+    partial class AkademisyenSifreDegistirForm
     {
         /// <summary>
         /// Required designer variable.
@@ -28,57 +28,57 @@
         /// </summary>
         private void InitializeComponent()
         {
-            label1 = new Label();
-            txtEskiSifre = new TextBox();
-            label2 = new Label();
-            txtYeniSifre = new TextBox();
             button1 = new Button();
+            txtYeniSifre = new TextBox();
+            label2 = new Label();
+            txtEskiSifre = new TextBox();
+            label1 = new Label();
             SuspendLayout();
             // 
-            // label1
+            // button1
             // 
-            label1.AutoSize = true;
-            label1.Location = new Point(23, 24);
-            label1.Name = "label1";
-            label1.Size = new Size(108, 20);
-            label1.TabIndex = 0;
-            label1.Text = "Güncel şifreniz:";
+            button1.Location = new Point(43, 219);
+            button1.Name = "button1";
+            button1.Size = new Size(139, 39);
+            button1.TabIndex = 9;
+            button1.Text = "Güncelle";
+            button1.UseVisualStyleBackColor = true;
+            button1.Click += button1_Click_1;
             // 
-            // txtEskiSifre
+            // txtYeniSifre
             // 
-            txtEskiSifre.Location = new Point(23, 47);
-            txtEskiSifre.Name = "txtEskiSifre";
-            txtEskiSifre.ReadOnly = true;
-            txtEskiSifre.Size = new Size(200, 27);
-            txtEskiSifre.TabIndex = 1;
+            txtYeniSifre.Location = new Point(25, 141);
+            txtYeniSifre.Name = "txtYeniSifre";
+            txtYeniSifre.Size = new Size(200, 27);
+            txtYeniSifre.TabIndex = 8;
             // 
             // label2
             // 
             label2.AutoSize = true;
-            label2.Location = new Point(23, 118);
+            label2.Location = new Point(25, 118);
             label2.Name = "label2";
             label2.Size = new Size(139, 20);
-            label2.TabIndex = 2;
+            label2.TabIndex = 7;
             label2.Text = "Yeni şifrenizi giriniz:";
             // 
-            // txtYeniSifre
+            // txtEskiSifre
             // 
-            txtYeniSifre.Location = new Point(23, 141);
-            txtYeniSifre.Name = "txtYeniSifre";
-            txtYeniSifre.Size = new Size(200, 27);
-            txtYeniSifre.TabIndex = 3;
+            txtEskiSifre.Location = new Point(25, 47);
+            txtEskiSifre.Name = "txtEskiSifre";
+            txtEskiSifre.ReadOnly = true;
+            txtEskiSifre.Size = new Size(200, 27);
+            txtEskiSifre.TabIndex = 6;
             // 
-            // button1
+            // label1
             // 
-            button1.Location = new Point(41, 219);
-            button1.Name = "button1";
-            button1.Size = new Size(139, 39);
-            button1.TabIndex = 4;
-            button1.Text = "Güncelle";
-            button1.UseVisualStyleBackColor = true;
-            button1.Click += button1_Click;
+            label1.AutoSize = true;
+            label1.Location = new Point(25, 24);
+            label1.Name = "label1";
+            label1.Size = new Size(108, 20);
+            label1.TabIndex = 5;
+            label1.Text = "Güncel şifreniz:";
             // 
-            // SifreDegistirForm
+            // AkademisyenSifreDegistirForm
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
@@ -88,18 +88,18 @@
             Controls.Add(label2);
             Controls.Add(txtEskiSifre);
             Controls.Add(label1);
-            Name = "SifreDegistirForm";
-            Text = "SifreDegistirForm";
+            Name = "AkademisyenSifreDegistirForm";
+            Text = "AkademisyenSifreDegistir";
             ResumeLayout(false);
             PerformLayout();
         }
 
         #endregion
 
-        private Label label1;
-        private TextBox txtEskiSifre;
-        private Label label2;
-        private TextBox txtYeniSifre;
         private Button button1;
+        private TextBox txtYeniSifre;
+        private Label label2;
+        private TextBox txtEskiSifre;
+        private Label label1;
     }
 }

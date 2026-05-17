@@ -74,7 +74,7 @@ namespace windowsAppCsharpOgrenciIsleriProgrami
 
         private void button1_Click(object sender, EventArgs e)
         {
-            SifreDegistirForm sifreDegistirForm = new SifreDegistirForm(ogrenciId);
+            OgrenciSifreDegistirForm sifreDegistirForm = new OgrenciSifreDegistirForm(ogrenciId);
             sifreDegistirForm.ShowDialog();
         }
     }
