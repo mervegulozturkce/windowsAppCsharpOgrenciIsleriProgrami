@@ -8,57 +8,50 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using windowsAppCsharpOgrenciIsleriProgrami;
 
 namespace windowsAppCsharpOgrenciIsleriProgrami
 {
-    public partial class NotGoruntulemeForm : Form
+    public partial class SifreDegistirForm : Form
     {
         SqlConnection contact;
         SqlCommand command;
         SqlDataAdapter adapter;
 
         int ogrenciId;
-        public NotGoruntulemeForm(int _ogrenciId)
+        public SifreDegistirForm(int _ogrenciId)
         {
             InitializeComponent();
             contact = DataLayer.GetSqlConnection();
             ogrenciId = _ogrenciId;
+
+            writeOldpasswordOnTextBox(ogrenciId);
         }
 
-        private void NotGoruntulemeForm_Load(object sender, EventArgs e)
+        public void ChangePassword(int ogrenciId)
         {
-            list(ogrenciId);
-            gridFill(ogrenciId);
-        }
-
-        public void list(int ogrenciId)
-        {
-            string sql = "SELECT Name, Surname FROM Ogrenci WHERE Id = @ogrenciId";
+            string sql = "UPDATE Ogrenci SET Password = @newPassword WHERE Id = @ogrenciId";
 
             using (SqlCommand command = new SqlCommand(sql, contact))
             {
+                command.Parameters.AddWithValue("@newPassword", txtYeniSifre.Text);
                 command.Parameters.AddWithValue("@ogrenciId", ogrenciId);
-                adapter = new SqlDataAdapter(command);
-                DataTable dataTable = new DataTable();
                 contact.Open();
-                adapter.Fill(dataTable);
+                int rowsAffected = command.ExecuteNonQuery();
                 contact.Close();
-
-                if (dataTable.Rows.Count > 0)
+                if (rowsAffected > 0)
                 {
-                    DataRow row = dataTable.Rows[0];
-                    txtAdSoyad.Text = $"{row["Name"].ToString()} {row["Surname"].ToString()}";
+                    MessageBox.Show("Şifre başarıyla değiştirildi.");
+                }
+                else
+                {
+                    MessageBox.Show("Şifre değiştirme işlemi başarısız oldu.");
                 }
             }
         }
 
-        public void gridFill(int ogrenciId)
+        public void writeOldpasswordOnTextBox(int ogrenciId)
         {
-            string sql = @"Select R.Id, ClassCode=C.Code, C.Name as ClassName,
-		                    R.Midterm,R.Finals,R.Homeworks,R.Quiz,R.MakeUp,R.TermGrade
-	                    From Results R	
-	                    Inner Join Class C on C.Id=R.ClassId WHERE StudentId = @ogrenciId";
+            string sql = "SELECT Password FROM Ogrenci WHERE Id = @ogrenciId";
 
             using (SqlCommand command = new SqlCommand(sql, contact))
             {
@@ -68,16 +61,19 @@ namespace windowsAppCsharpOgrenciIsleriProgrami
                 contact.Open();
                 adapter.Fill(dataTable);
                 contact.Close();
-                dataGridView1.DataSource = dataTable;
+                if (dataTable.Rows.Count > 0)
+                {
+                    DataRow row = dataTable.Rows[0];
+                    txtEskiSifre.Text = row["Password"].ToString();
+                }
             }
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
-            SifreDegistirForm sifreDegistirForm = new SifreDegistirForm(ogrenciId);
-            sifreDegistirForm.ShowDialog();
+            ChangePassword(ogrenciId);
+
+            Close();
         }
     }
 }
-
-

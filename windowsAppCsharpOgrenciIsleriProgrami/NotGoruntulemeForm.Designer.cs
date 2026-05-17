@@ -40,6 +40,7 @@
             ResultsList_Quiz = new DataGridViewTextBoxColumn();
             ResultsList_MakeUp = new DataGridViewTextBoxColumn();
             ResultsList_TermGrade = new DataGridViewTextBoxColumn();
+            button1 = new Button();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             SuspendLayout();
             // 
@@ -157,11 +158,22 @@
             ResultsList_TermGrade.ReadOnly = true;
             ResultsList_TermGrade.Width = 125;
             // 
+            // button1
+            // 
+            button1.Location = new Point(903, 9);
+            button1.Name = "button1";
+            button1.Size = new Size(151, 26);
+            button1.TabIndex = 14;
+            button1.Text = "Şifre Değiştir";
+            button1.UseVisualStyleBackColor = true;
+            button1.Click += button1_Click;
+            // 
             // NotGoruntulemeForm
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1112, 443);
+            Controls.Add(button1);
             Controls.Add(dataGridView1);
             Controls.Add(txtAdSoyad);
             Controls.Add(label10);
@@ -187,5 +199,6 @@
         private DataGridViewTextBoxColumn ResultsList_Quiz;
         private DataGridViewTextBoxColumn ResultsList_MakeUp;
         private DataGridViewTextBoxColumn ResultsList_TermGrade;
+        private Button button1;
     }
 }
