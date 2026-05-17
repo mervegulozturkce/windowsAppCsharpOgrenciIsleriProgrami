@@ -74,5 +74,11 @@ namespace windowsAppCsharpOgrenciIsleriProgrami
                 akademisyenGuncellemeForm.Show();
             }
         }
+
+        private void akademisyenEkleToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            AkademisyenEklemeForm akademisyenEklemeForm = new AkademisyenEklemeForm();
+            akademisyenEklemeForm.Show();
+        }
     }
 }

@@ -44,6 +44,8 @@
             label3 = new Label();
             label1 = new Label();
             label9 = new Label();
+            panel1 = new Panel();
+            panel1.SuspendLayout();
             SuspendLayout();
             // 
             // txtParola
@@ -64,7 +66,7 @@
             // 
             // button1
             // 
-            button1.Location = new Point(402, 160);
+            button1.Location = new Point(266, 3);
             button1.Name = "button1";
             button1.Size = new Size(145, 37);
             button1.TabIndex = 32;
@@ -177,15 +179,24 @@
             label9.TabIndex = 35;
             label9.Text = "Güncellemek için aşağıdaki bilgileri doldurunuz.";
             // 
+            // panel1
+            // 
+            panel1.Controls.Add(button1);
+            panel1.Dock = DockStyle.Bottom;
+            panel1.Location = new Point(0, 501);
+            panel1.Name = "panel1";
+            panel1.Size = new Size(417, 52);
+            panel1.TabIndex = 36;
+            // 
             // AkademisyenGuncellemeForm
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(811, 517);
+            ClientSize = new Size(417, 553);
+            Controls.Add(panel1);
             Controls.Add(label9);
             Controls.Add(txtParola);
             Controls.Add(label8);
-            Controls.Add(button1);
             Controls.Add(txtDepartment);
             Controls.Add(txtIletisim);
             Controls.Add(txtMemleket);
@@ -198,8 +209,10 @@
             Controls.Add(label4);
             Controls.Add(label3);
             Controls.Add(label1);
+            FormBorderStyle = FormBorderStyle.FixedDialog;
             Name = "AkademisyenGuncellemeForm";
             Text = "AkademisyenGuncellemeForm";
+            panel1.ResumeLayout(false);
             ResumeLayout(false);
             PerformLayout();
         }
@@ -222,5 +235,6 @@
         private Label label3;
         private Label label1;
         private Label label9;
+        private Panel panel1;
     }
 }

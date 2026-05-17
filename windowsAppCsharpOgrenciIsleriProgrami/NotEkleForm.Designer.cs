@@ -41,7 +41,9 @@
             ResultsList_TermGrade = new DataGridViewTextBoxColumn();
             txtAdSoyad = new TextBox();
             button1 = new Button();
+            panel1 = new Panel();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
+            panel1.SuspendLayout();
             SuspendLayout();
             // 
             // label10
@@ -150,7 +152,7 @@
             // 
             // button1
             // 
-            button1.Location = new Point(548, 406);
+            button1.Location = new Point(443, 7);
             button1.Name = "button1";
             button1.Size = new Size(152, 33);
             button1.TabIndex = 11;
@@ -158,19 +160,30 @@
             button1.UseVisualStyleBackColor = true;
             button1.Click += button1_Click;
             // 
+            // panel1
+            // 
+            panel1.Controls.Add(button1);
+            panel1.Dock = DockStyle.Bottom;
+            panel1.Location = new Point(0, 410);
+            panel1.Name = "panel1";
+            panel1.Size = new Size(1116, 52);
+            panel1.TabIndex = 20;
+            // 
             // NotEkleForm
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1116, 450);
-            Controls.Add(button1);
+            ClientSize = new Size(1116, 462);
+            Controls.Add(panel1);
             Controls.Add(txtAdSoyad);
             Controls.Add(dataGridView1);
             Controls.Add(label10);
+            FormBorderStyle = FormBorderStyle.FixedDialog;
             Name = "NotEkleForm";
             Text = "NotEkleForm";
             Load += NotEkleForm_Load;
             ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
+            panel1.ResumeLayout(false);
             ResumeLayout(false);
             PerformLayout();
         }
@@ -206,5 +219,6 @@
         private DataGridViewTextBoxColumn ResultsList_Quiz;
         private DataGridViewTextBoxColumn ResultsList_MakeUp;
         private DataGridViewTextBoxColumn ResultsList_TermGrade;
+        private Panel panel1;
     }
 }

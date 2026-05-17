@@ -18,7 +18,7 @@ namespace windowsAppCsharpOgrenciIsleriProgrami
         public void list()
         {
             contact = DataLayer.GetSqlConnection();
-            string data = "SELECT * FROM Ogrenci ";
+            string data = "SELECT Id, Name, Surname, Birthdate, Hometown, StudentNumber FROM Ogrenci ";
 
             SqlCommand command = new SqlCommand(data, contact);
 

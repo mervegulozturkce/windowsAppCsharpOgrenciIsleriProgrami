@@ -112,13 +112,6 @@ namespace windowsAppCsharpOgrenciIsleriProgrami
 
             return false;
         }
-
-        private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
-        {
-            KisiEklemeForm kisiEklemeForm = new KisiEklemeForm();
-            kisiEklemeForm.Show();
-        }
-
         public int GetingStudentId()
         {
             string username = txtAdSoyad.Text.Trim();

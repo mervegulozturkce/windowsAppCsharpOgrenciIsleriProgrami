@@ -177,6 +177,7 @@
             Controls.Add(dataGridView1);
             Controls.Add(txtAdSoyad);
             Controls.Add(label10);
+            FormBorderStyle = FormBorderStyle.FixedDialog;
             Name = "NotGoruntulemeForm";
             Text = "NotGoruntulemeForm";
             Load += NotGoruntulemeForm_Load;

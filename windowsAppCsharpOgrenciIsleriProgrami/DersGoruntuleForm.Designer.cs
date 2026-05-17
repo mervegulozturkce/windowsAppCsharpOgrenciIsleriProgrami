@@ -45,6 +45,8 @@
             label5 = new Label();
             label4 = new Label();
             label3 = new Label();
+            panel1 = new Panel();
+            panel1.SuspendLayout();
             SuspendLayout();
             // 
             // label1
@@ -81,7 +83,7 @@
             // 
             // button1
             // 
-            button1.Location = new Point(227, 63);
+            button1.Location = new Point(655, 10);
             button1.Name = "button1";
             button1.Size = new Size(131, 30);
             button1.TabIndex = 4;
@@ -190,11 +192,21 @@
             label3.TabIndex = 17;
             label3.Text = "Dersin dönem sonu ortalamasına vizenin yüzde kaç etki edeceğini yazınız:";
             // 
+            // panel1
+            // 
+            panel1.Controls.Add(button1);
+            panel1.Dock = DockStyle.Bottom;
+            panel1.Location = new Point(0, 435);
+            panel1.Name = "panel1";
+            panel1.Size = new Size(825, 52);
+            panel1.TabIndex = 29;
+            // 
             // DersGoruntuleForm
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(825, 487);
+            Controls.Add(panel1);
             Controls.Add(label10);
             Controls.Add(label9);
             Controls.Add(label8);
@@ -207,13 +219,14 @@
             Controls.Add(label5);
             Controls.Add(label4);
             Controls.Add(label3);
-            Controls.Add(button1);
             Controls.Add(label2);
             Controls.Add(txtDersKod);
             Controls.Add(txtDersAd);
             Controls.Add(label1);
+            FormBorderStyle = FormBorderStyle.FixedDialog;
             Name = "DersGoruntuleForm";
             Text = "DersGoruntuleForm";
+            panel1.ResumeLayout(false);
             ResumeLayout(false);
             PerformLayout();
         }
@@ -243,5 +256,6 @@
         private TextBox txtOdev;
         private TextBox txtFinal;
         private TextBox txtVize;
+        private Panel panel1;
     }
 }

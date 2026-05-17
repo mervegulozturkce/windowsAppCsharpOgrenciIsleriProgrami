@@ -42,6 +42,8 @@
             txtDogumTarihi = new TextBox();
             txtParola = new TextBox();
             label7 = new Label();
+            panel1 = new Panel();
+            panel1.SuspendLayout();
             SuspendLayout();
             // 
             // label1
@@ -128,7 +130,7 @@
             // 
             // button1
             // 
-            button1.Location = new Point(48, 394);
+            button1.Location = new Point(371, 3);
             button1.Name = "button1";
             button1.Size = new Size(145, 37);
             button1.TabIndex = 16;
@@ -160,15 +162,24 @@
             label7.TabIndex = 19;
             label7.Text = "Öğrencinin geçici şifresi:";
             // 
+            // panel1
+            // 
+            panel1.Controls.Add(button1);
+            panel1.Dock = DockStyle.Bottom;
+            panel1.Location = new Point(0, 389);
+            panel1.Name = "panel1";
+            panel1.Size = new Size(528, 52);
+            panel1.TabIndex = 20;
+            // 
             // OgrenciEkleForm
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(802, 453);
+            ClientSize = new Size(528, 441);
+            Controls.Add(panel1);
             Controls.Add(label7);
             Controls.Add(txtParola);
             Controls.Add(txtDogumTarihi);
-            Controls.Add(button1);
             Controls.Add(txtMemleket);
             Controls.Add(txtSoyad);
             Controls.Add(txtAd);
@@ -179,8 +190,10 @@
             Controls.Add(label3);
             Controls.Add(label2);
             Controls.Add(label1);
+            FormBorderStyle = FormBorderStyle.FixedDialog;
             Name = "OgrenciEkleForm";
             Text = "OgrenciEkleForm";
+            panel1.ResumeLayout(false);
             ResumeLayout(false);
             PerformLayout();
         }
@@ -200,5 +213,6 @@
         private TextBox txtDogumTarihi;
         private TextBox txtParola;
         private Label label7;
+        private Panel panel1;
     }
 }

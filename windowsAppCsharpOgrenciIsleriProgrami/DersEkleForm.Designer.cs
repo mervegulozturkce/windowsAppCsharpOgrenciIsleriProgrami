@@ -45,6 +45,8 @@
             label9 = new Label();
             label10 = new Label();
             label11 = new Label();
+            panel1 = new Panel();
+            panel1.SuspendLayout();
             SuspendLayout();
             // 
             // label1
@@ -81,7 +83,7 @@
             // 
             // button1
             // 
-            button1.Location = new Point(420, 55);
+            button1.Location = new Point(689, 9);
             button1.Name = "button1";
             button1.Size = new Size(121, 31);
             button1.TabIndex = 4;
@@ -190,11 +192,21 @@
             label11.TabIndex = 18;
             label11.Text = "Dersin dönem sonu ortalamasına finalin yüzde kaç etki edeceğini yazınız:(Bütünleme de aynı oranda etkileyecektir.)";
             // 
+            // panel1
+            // 
+            panel1.Controls.Add(button1);
+            panel1.Dock = DockStyle.Bottom;
+            panel1.Location = new Point(0, 467);
+            panel1.Name = "panel1";
+            panel1.Size = new Size(846, 52);
+            panel1.TabIndex = 20;
+            // 
             // DersEkleForm
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(846, 467);
+            ClientSize = new Size(846, 519);
+            Controls.Add(panel1);
             Controls.Add(label11);
             Controls.Add(label10);
             Controls.Add(label9);
@@ -207,13 +219,14 @@
             Controls.Add(label6);
             Controls.Add(label5);
             Controls.Add(label3);
-            Controls.Add(button1);
             Controls.Add(txtDersKod);
             Controls.Add(label2);
             Controls.Add(txtDersAd);
             Controls.Add(label1);
+            FormBorderStyle = FormBorderStyle.FixedDialog;
             Name = "DersEkleForm";
             Text = "DersEkleForm";
+            panel1.ResumeLayout(false);
             ResumeLayout(false);
             PerformLayout();
         }
@@ -237,5 +250,6 @@
         private Label label9;
         private Label label10;
         private Label label11;
+        private Panel panel1;
     }
 }

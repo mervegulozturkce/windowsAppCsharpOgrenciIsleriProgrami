@@ -32,13 +32,14 @@
             menuOgrenciList = new ToolStripMenuItem();
             menuDersList = new ToolStripMenuItem();
             bilgiGüncellemeToolStripMenuItem = new ToolStripMenuItem();
+            akademisyenEkleToolStripMenuItem = new ToolStripMenuItem();
             menuStrip1.SuspendLayout();
             SuspendLayout();
             // 
             // menuStrip1
             // 
             menuStrip1.ImageScalingSize = new Size(20, 20);
-            menuStrip1.Items.AddRange(new ToolStripItem[] { menuOgrenciList, menuDersList, bilgiGüncellemeToolStripMenuItem });
+            menuStrip1.Items.AddRange(new ToolStripItem[] { menuOgrenciList, menuDersList, bilgiGüncellemeToolStripMenuItem, akademisyenEkleToolStripMenuItem });
             menuStrip1.Location = new Point(0, 0);
             menuStrip1.Name = "menuStrip1";
             menuStrip1.Size = new Size(800, 28);
@@ -66,12 +67,20 @@
             bilgiGüncellemeToolStripMenuItem.Text = "Bilgi Güncelleme";
             bilgiGüncellemeToolStripMenuItem.Click += bilgiGüncellemeToolStripMenuItem_Click;
             // 
+            // akademisyenEkleToolStripMenuItem
+            // 
+            akademisyenEkleToolStripMenuItem.Name = "akademisyenEkleToolStripMenuItem";
+            akademisyenEkleToolStripMenuItem.Size = new Size(142, 24);
+            akademisyenEkleToolStripMenuItem.Text = "Akademisyen Ekle";
+            akademisyenEkleToolStripMenuItem.Click += akademisyenEkleToolStripMenuItem_Click;
+            // 
             // AnaEkranForm
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
             Controls.Add(menuStrip1);
+            FormBorderStyle = FormBorderStyle.FixedDialog;
             IsMdiContainer = true;
             MainMenuStrip = menuStrip1;
             Name = "AnaEkranForm";
@@ -88,5 +97,6 @@
         private ToolStripMenuItem menuOgrenciList;
         private ToolStripMenuItem menuDersList;
         private ToolStripMenuItem bilgiGüncellemeToolStripMenuItem;
+        private ToolStripMenuItem akademisyenEkleToolStripMenuItem;
     }
 }

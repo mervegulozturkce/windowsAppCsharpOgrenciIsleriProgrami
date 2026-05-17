@@ -34,22 +34,22 @@
             label3 = new Label();
             txtParola = new TextBox();
             button1 = new Button();
-            linkLabel1 = new LinkLabel();
             SuspendLayout();
             // 
             // label1
             // 
+            label1.AutoSize = true;
             label1.Font = new Font("Segoe UI", 20F);
-            label1.Location = new Point(183, 44);
+            label1.Location = new Point(138, 49);
             label1.Name = "label1";
-            label1.Size = new Size(374, 42);
+            label1.Size = new Size(374, 46);
             label1.TabIndex = 0;
             label1.Text = "ÖĞRENCİ BİLGİ SİSTEMİ";
             // 
             // label2
             // 
             label2.AutoSize = true;
-            label2.Location = new Point(324, 146);
+            label2.Location = new Point(278, 116);
             label2.Name = "label2";
             label2.Size = new Size(93, 20);
             label2.TabIndex = 1;
@@ -57,7 +57,7 @@
             // 
             // txtAdSoyad
             // 
-            txtAdSoyad.Location = new Point(290, 180);
+            txtAdSoyad.Location = new Point(245, 150);
             txtAdSoyad.Name = "txtAdSoyad";
             txtAdSoyad.Size = new Size(160, 27);
             txtAdSoyad.TabIndex = 2;
@@ -65,7 +65,7 @@
             // label3
             // 
             label3.AutoSize = true;
-            label3.Location = new Point(344, 245);
+            label3.Location = new Point(298, 193);
             label3.Name = "label3";
             label3.Size = new Size(53, 20);
             label3.TabIndex = 3;
@@ -73,14 +73,15 @@
             // 
             // txtParola
             // 
-            txtParola.Location = new Point(290, 279);
+            txtParola.Location = new Point(245, 216);
             txtParola.Name = "txtParola";
+            txtParola.PasswordChar = '*';
             txtParola.Size = new Size(160, 27);
             txtParola.TabIndex = 4;
             // 
             // button1
             // 
-            button1.Location = new Point(290, 348);
+            button1.Location = new Point(245, 278);
             button1.Name = "button1";
             button1.Size = new Size(160, 27);
             button1.TabIndex = 5;
@@ -88,24 +89,11 @@
             button1.UseVisualStyleBackColor = true;
             button1.Click += button1_Click;
             // 
-            // linkLabel1
-            // 
-            linkLabel1.AutoSize = true;
-            linkLabel1.LinkColor = Color.Blue;
-            linkLabel1.Location = new Point(341, 399);
-            linkLabel1.Name = "linkLabel1";
-            linkLabel1.Size = new Size(59, 20);
-            linkLabel1.TabIndex = 6;
-            linkLabel1.TabStop = true;
-            linkLabel1.Text = "Kaydol!";
-            linkLabel1.LinkClicked += linkLabel1_LinkClicked;
-            // 
             // GirisEkrani
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(800, 450);
-            Controls.Add(linkLabel1);
+            ClientSize = new Size(651, 384);
             Controls.Add(button1);
             Controls.Add(txtParola);
             Controls.Add(label3);
@@ -113,6 +101,8 @@
             Controls.Add(label2);
             Controls.Add(label1);
             ForeColor = SystemColors.ControlText;
+            FormBorderStyle = FormBorderStyle.FixedDialog;
+            MaximizeBox = false;
             Name = "GirisEkrani";
             Text = "GirisEkrani";
             ResumeLayout(false);
@@ -127,6 +117,5 @@
         private Label label3;
         private TextBox txtParola;
         private Button button1;
-        private LinkLabel linkLabel1;
     }
 }

@@ -119,6 +119,7 @@
             Controls.Add(button2);
             Controls.Add(button1);
             Controls.Add(classList);
+            FormBorderStyle = FormBorderStyle.FixedDialog;
             Name = "DersList";
             Text = "DersList";
             FormClosed += DersList_FormClosed;

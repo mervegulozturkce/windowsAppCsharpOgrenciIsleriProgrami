@@ -41,6 +41,8 @@
             txtAd = new TextBox();
             button1 = new Button();
             button2 = new Button();
+            panel1 = new Panel();
+            panel1.SuspendLayout();
             SuspendLayout();
             // 
             // label2
@@ -135,7 +137,7 @@
             // 
             // button1
             // 
-            button1.Location = new Point(329, 176);
+            button1.Location = new Point(36, 10);
             button1.Name = "button1";
             button1.Size = new Size(118, 30);
             button1.TabIndex = 17;
@@ -145,7 +147,7 @@
             // 
             // button2
             // 
-            button2.Location = new Point(329, 239);
+            button2.Location = new Point(207, 10);
             button2.Name = "button2";
             button2.Size = new Size(118, 30);
             button2.TabIndex = 18;
@@ -153,13 +155,22 @@
             button2.UseVisualStyleBackColor = true;
             button2.Click += button2_Click;
             // 
+            // panel1
+            // 
+            panel1.Controls.Add(button2);
+            panel1.Controls.Add(button1);
+            panel1.Dock = DockStyle.Bottom;
+            panel1.Location = new Point(0, 380);
+            panel1.Name = "panel1";
+            panel1.Size = new Size(358, 52);
+            panel1.TabIndex = 20;
+            // 
             // OgrenciGoruntuleForm
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(751, 416);
-            Controls.Add(button2);
-            Controls.Add(button1);
+            ClientSize = new Size(358, 432);
+            Controls.Add(panel1);
             Controls.Add(txtAd);
             Controls.Add(txtDogumTarihi);
             Controls.Add(txtMemleket);
@@ -171,8 +182,10 @@
             Controls.Add(txtNumara);
             Controls.Add(label3);
             Controls.Add(label2);
+            FormBorderStyle = FormBorderStyle.FixedDialog;
             Name = "OgrenciGoruntuleForm";
             Text = "OgrenciGoruntuleForm";
+            panel1.ResumeLayout(false);
             ResumeLayout(false);
             PerformLayout();
         }
@@ -191,5 +204,6 @@
         private TextBox txtAd;
         private Button button1;
         private Button button2;
+        private Panel panel1;
     }
 }
