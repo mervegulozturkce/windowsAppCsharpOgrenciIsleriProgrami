@@ -37,7 +37,7 @@
             label7 = new Label();
             txtSoyad = new TextBox();
             txtMemleket = new TextBox();
-            txtYas = new TextBox();
+            txtDogumTarihi = new TextBox();
             txtAd = new TextBox();
             button1 = new Button();
             button2 = new Button();
@@ -100,9 +100,9 @@
             label7.AutoSize = true;
             label7.Location = new Point(14, 255);
             label7.Name = "label7";
-            label7.Size = new Size(113, 20);
+            label7.Size = new Size(258, 20);
             label7.TabIndex = 10;
-            label7.Text = "Öğrencinin yaşı:";
+            label7.Text = "Öğrencinin doğum tarihi:(gg/aa/yyyy)";
             // 
             // txtSoyad
             // 
@@ -118,12 +118,13 @@
             txtMemleket.Size = new Size(140, 27);
             txtMemleket.TabIndex = 13;
             // 
-            // txtYas
+            // txtDogumTarihi
             // 
-            txtYas.Location = new Point(14, 278);
-            txtYas.Name = "txtYas";
-            txtYas.Size = new Size(140, 27);
-            txtYas.TabIndex = 14;
+            txtDogumTarihi.Location = new Point(14, 278);
+            txtDogumTarihi.Name = "txtDogumTarihi";
+            txtDogumTarihi.ReadOnly = true;
+            txtDogumTarihi.Size = new Size(140, 27);
+            txtDogumTarihi.TabIndex = 14;
             // 
             // txtAd
             // 
@@ -134,9 +135,9 @@
             // 
             // button1
             // 
-            button1.Location = new Point(265, 174);
+            button1.Location = new Point(329, 176);
             button1.Name = "button1";
-            button1.Size = new Size(118, 32);
+            button1.Size = new Size(118, 30);
             button1.TabIndex = 17;
             button1.Text = "Güncelle";
             button1.UseVisualStyleBackColor = true;
@@ -144,9 +145,9 @@
             // 
             // button2
             // 
-            button2.Location = new Point(265, 237);
+            button2.Location = new Point(329, 239);
             button2.Name = "button2";
-            button2.Size = new Size(118, 32);
+            button2.Size = new Size(118, 30);
             button2.TabIndex = 18;
             button2.Text = "Sil";
             button2.UseVisualStyleBackColor = true;
@@ -160,7 +161,7 @@
             Controls.Add(button2);
             Controls.Add(button1);
             Controls.Add(txtAd);
-            Controls.Add(txtYas);
+            Controls.Add(txtDogumTarihi);
             Controls.Add(txtMemleket);
             Controls.Add(txtSoyad);
             Controls.Add(label7);
@@ -186,7 +187,7 @@
         private Label label7;
         private TextBox txtSoyad;
         private TextBox txtMemleket;
-        private TextBox txtYas;
+        private TextBox txtDogumTarihi;
         private TextBox txtAd;
         private Button button1;
         private Button button2;

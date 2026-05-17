@@ -25,15 +25,15 @@ namespace windowsAppCsharpOgrenciIsleriProgrami
 
         public void add()
         {
-            string sql = "Insert into Akademisyen (Name, Surname, Age, Hometown, Contact, Department, Password) values (@Name,@Surname,@Age,@Hometown,@Contact,@Department,@Password)";
+            string sql = "Insert into Akademisyen (Name, Surname, Birthdate, Hometown, Contact, Department, Password) values (@Name,@Surname,@Birthdate,@Hometown,@Contact,@Department,@Password)";
             command = new SqlCommand(sql, contact);
-            command.Parameters.AddWithValue("@Name", textBox1.Text);
-            command.Parameters.AddWithValue("@Surname", textBox2.Text);
-            command.Parameters.AddWithValue("@Age", textBox3.Text);
-            command.Parameters.AddWithValue("@Hometown", textBox4.Text);
-            command.Parameters.AddWithValue("@Contact", textBox5.Text);
-            command.Parameters.AddWithValue("@Department", textBox6.Text);
-            command.Parameters.AddWithValue("@Password", textBox7.Text);
+            command.Parameters.AddWithValue("@Name", txtAd.Text);
+            command.Parameters.AddWithValue("@Surname", txtSoyad.Text);
+            command.Parameters.AddWithValue("@Birthdate", txtDogumTarihi.Text);
+            command.Parameters.AddWithValue("@Hometown", txtMemleket.Text);
+            command.Parameters.AddWithValue("@Contact", txtIletisim.Text);
+            command.Parameters.AddWithValue("@Department", txtDepartment.Text);
+            command.Parameters.AddWithValue("@Password", txtParola.Text);
 
             contact.Open();
             command.ExecuteNonQuery();

@@ -28,11 +28,11 @@ namespace windowsAppCsharpOgrenciIsleriProgrami
         }
         public void add()
         { 
-            string sql = "Insert into Ogrenci (Name,Surname,Age,Hometown,StudentNumber,Password) values (@Name,@Surname,@Age,@Hometown,@StudentNumber,@Password)";
+            string sql = "Insert into Ogrenci (Name,Surname,Birthdate,Hometown,StudentNumber,Password) values (@Name,@Surname,@Birthdate,@Hometown,@StudentNumber,@Password)";
             command = new SqlCommand(sql, contact);
             command.Parameters.AddWithValue("@Name", txtAd.Text);
             command.Parameters.AddWithValue("@Surname", txtSoyad.Text);
-            command.Parameters.AddWithValue("@Age", txtYas.Text);
+            command.Parameters.AddWithValue("@Birthdate", txtDogumTarihi.Text);
             command.Parameters.AddWithValue("@Hometown", txtMemleket.Text);
             command.Parameters.AddWithValue("@StudentNumber", txtNumara.Text);
 
@@ -72,17 +72,17 @@ namespace windowsAppCsharpOgrenciIsleriProgrami
         {
             string Name = txtAd.Text;
             string Surname = txtSoyad.Text;
-            string Age = txtYas.Text;
+            string Birthdate = txtDogumTarihi.Text;
             string Hometown = txtMemleket.Text;
             string StudentNumber = txtNumara.Text;
 
-            string sql = "SELECT Password FROM Ogrenci WHERE Name = @Name AND Surname = @Surname AND Age = @Age AND Hometown = @Hometown AND StudentNumber = @StudentNumber";
+            string sql = "SELECT Password FROM Ogrenci WHERE Name = @Name AND Surname = @Surname AND Birthdate = @Birthdate AND Hometown = @Hometown AND StudentNumber = @StudentNumber";
 
             using (SqlCommand command = new SqlCommand(sql, contact))
             {
                 command.Parameters.AddWithValue("@Name", Name);
                 command.Parameters.AddWithValue("@Surname", Surname);
-                command.Parameters.AddWithValue("@Age", Age);
+                command.Parameters.AddWithValue("@Birthdate", Birthdate);
                 command.Parameters.AddWithValue("@Hometown", Hometown);
                 command.Parameters.AddWithValue("@StudentNumber", StudentNumber);
                 adapter = new SqlDataAdapter(command);
@@ -98,7 +98,6 @@ namespace windowsAppCsharpOgrenciIsleriProgrami
                     txtParola.Text = row["Password"].ToString();
                 }
             }
-
         }
     }
 }

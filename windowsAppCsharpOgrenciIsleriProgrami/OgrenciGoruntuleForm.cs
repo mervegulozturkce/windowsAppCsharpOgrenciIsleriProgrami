@@ -28,7 +28,7 @@ namespace windowsAppCsharpOgrenciIsleriProgrami
 
         public void list(int ogrenciId)
         {
-            string sql = "Select Name,Surname,Age,Hometown,StudentNumber from Ogrenci where Id=@ogrenciId ";
+            string sql = "Select Name,Surname,Birthdate,Hometown,StudentNumber from Ogrenci where Id=@ogrenciId ";
 
             using (SqlCommand command = new SqlCommand(sql, contact))
             {
@@ -44,7 +44,7 @@ namespace windowsAppCsharpOgrenciIsleriProgrami
                     DataRow row = dataTable.Rows[0];
                     txtAd.Text = row["Name"].ToString();
                     txtSoyad.Text = row["Surname"].ToString();
-                    txtYas.Text = row["Age"].ToString();
+                    txtDogumTarihi.Text = row["Birthdate"].ToString();
                     txtMemleket.Text = row["Hometown"].ToString();
                     txtNumara.Text = row["StudentNumber"].ToString();
                 }
@@ -66,13 +66,13 @@ namespace windowsAppCsharpOgrenciIsleriProgrami
 
         private void button1_Click(object sender, EventArgs e)
         {            
-            string sql = "UPDATE Ogrenci SET Name=@Name, Surname=@Surname, Age=@Age, Hometown=@Hometown, StudentNumber =@StudentNumber WHERE Id=@ogrenciId";
+            string sql = "UPDATE Ogrenci SET Name=@Name, Surname=@Surname, Birthdate=@Birthdate, Hometown=@Hometown, StudentNumber =@StudentNumber WHERE Id=@ogrenciId";
             SqlCommand command = new SqlCommand(sql, contact);
 
             command.Parameters.AddWithValue("@ogrenciId", ogrenciId);
             command.Parameters.AddWithValue("@Name", txtAd.Text);
             command.Parameters.AddWithValue("@Surname", txtSoyad.Text);
-            command.Parameters.AddWithValue("@Age", int.Parse(txtYas.Text));
+            command.Parameters.AddWithValue("@Birthdate", txtDogumTarihi.Text);
             command.Parameters.AddWithValue("@Hometown", txtMemleket.Text);
             command.Parameters.AddWithValue("@StudentNumber", txtNumara.Text);
 

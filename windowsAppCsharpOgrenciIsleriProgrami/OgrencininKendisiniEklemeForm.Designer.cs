@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            txtYas = new TextBox();
+            txtDogumTarihi = new TextBox();
             txtMemleket = new TextBox();
             txtSoyad = new TextBox();
             txtAd = new TextBox();
@@ -44,12 +44,12 @@
             button1 = new Button();
             SuspendLayout();
             // 
-            // txtYas
+            // txtDogumTarihi
             // 
-            txtYas.Location = new Point(33, 278);
-            txtYas.Name = "txtYas";
-            txtYas.Size = new Size(200, 27);
-            txtYas.TabIndex = 29;
+            txtDogumTarihi.Location = new Point(33, 278);
+            txtDogumTarihi.Name = "txtDogumTarihi";
+            txtDogumTarihi.Size = new Size(200, 27);
+            txtDogumTarihi.TabIndex = 29;
             // 
             // txtMemleket
             // 
@@ -93,9 +93,9 @@
             label5.AutoSize = true;
             label5.Location = new Point(33, 255);
             label5.Name = "label5";
-            label5.Size = new Size(105, 20);
+            label5.Size = new Size(256, 20);
             label5.TabIndex = 22;
-            label5.Text = "Yaşınızı giriniz:";
+            label5.Text = "Doğum tarihinizi giriniz: (gg/aa/yyyy)";
             // 
             // label4
             // 
@@ -167,7 +167,7 @@
             Controls.Add(button1);
             Controls.Add(txtParola);
             Controls.Add(label7);
-            Controls.Add(txtYas);
+            Controls.Add(txtDogumTarihi);
             Controls.Add(txtMemleket);
             Controls.Add(txtSoyad);
             Controls.Add(txtAd);
@@ -186,7 +186,7 @@
 
         #endregion
 
-        private TextBox txtYas;
+        private TextBox txtDogumTarihi;
         private TextBox txtMemleket;
         private TextBox txtSoyad;
         private TextBox txtAd;

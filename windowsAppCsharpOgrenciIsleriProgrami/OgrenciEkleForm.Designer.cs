@@ -39,7 +39,7 @@
             txtSoyad = new TextBox();
             txtMemleket = new TextBox();
             button1 = new Button();
-            txtYas = new TextBox();
+            txtDogumTarihi = new TextBox();
             txtParola = new TextBox();
             label7 = new Label();
             SuspendLayout();
@@ -85,9 +85,9 @@
             label5.AutoSize = true;
             label5.Location = new Point(27, 252);
             label5.Name = "label5";
-            label5.Size = new Size(170, 20);
+            label5.Size = new Size(258, 20);
             label5.TabIndex = 9;
-            label5.Text = "Öğrencinin yaşını giriniz:";
+            label5.Text = "Öğrencinin yaşını giriniz: (gg/aa/yyyy)";
             // 
             // label6
             // 
@@ -136,12 +136,12 @@
             button1.UseVisualStyleBackColor = true;
             button1.Click += button1_Click;
             // 
-            // txtYas
+            // txtDogumTarihi
             // 
-            txtYas.Location = new Point(27, 275);
-            txtYas.Name = "txtYas";
-            txtYas.Size = new Size(200, 27);
-            txtYas.TabIndex = 17;
+            txtDogumTarihi.Location = new Point(27, 275);
+            txtDogumTarihi.Name = "txtDogumTarihi";
+            txtDogumTarihi.Size = new Size(200, 27);
+            txtDogumTarihi.TabIndex = 17;
             // 
             // txtParola
             // 
@@ -167,7 +167,7 @@
             ClientSize = new Size(802, 453);
             Controls.Add(label7);
             Controls.Add(txtParola);
-            Controls.Add(txtYas);
+            Controls.Add(txtDogumTarihi);
             Controls.Add(button1);
             Controls.Add(txtMemleket);
             Controls.Add(txtSoyad);
@@ -197,7 +197,7 @@
         private TextBox txtSoyad;
         private TextBox txtMemleket;
         private Button button1;
-        private TextBox txtYas;
+        private TextBox txtDogumTarihi;
         private TextBox txtParola;
         private Label label7;
     }

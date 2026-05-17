@@ -35,15 +35,15 @@
             label5 = new Label();
             label6 = new Label();
             label7 = new Label();
-            textBox1 = new TextBox();
-            textBox2 = new TextBox();
-            textBox3 = new TextBox();
-            textBox4 = new TextBox();
-            textBox5 = new TextBox();
-            textBox6 = new TextBox();
+            txtAd = new TextBox();
+            txtSoyad = new TextBox();
+            txtDogumTarihi = new TextBox();
+            txtMemleket = new TextBox();
+            txtIletisim = new TextBox();
+            txtDepartment = new TextBox();
             button1 = new Button();
             label8 = new Label();
-            textBox7 = new TextBox();
+            txtParola = new TextBox();
             SuspendLayout();
             // 
             // label2
@@ -78,9 +78,9 @@
             label4.AutoSize = true;
             label4.Location = new Point(12, 173);
             label4.Name = "label4";
-            label4.Size = new Size(105, 20);
+            label4.Size = new Size(256, 20);
             label4.TabIndex = 6;
-            label4.Text = "Yaşınızı giriniz:";
+            label4.Text = "Doğum tarihinizi giriniz: (gg/aa/yyyy)";
             // 
             // label5
             // 
@@ -109,47 +109,47 @@
             label7.TabIndex = 9;
             label7.Text = "Alanınızı giriniz:";
             // 
-            // textBox1
+            // txtAd
             // 
-            textBox1.Location = new Point(12, 65);
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(200, 27);
-            textBox1.TabIndex = 10;
+            txtAd.Location = new Point(12, 65);
+            txtAd.Name = "txtAd";
+            txtAd.Size = new Size(200, 27);
+            txtAd.TabIndex = 10;
             // 
-            // textBox2
+            // txtSoyad
             // 
-            textBox2.Location = new Point(12, 129);
-            textBox2.Name = "textBox2";
-            textBox2.Size = new Size(200, 27);
-            textBox2.TabIndex = 11;
+            txtSoyad.Location = new Point(12, 129);
+            txtSoyad.Name = "txtSoyad";
+            txtSoyad.Size = new Size(200, 27);
+            txtSoyad.TabIndex = 11;
             // 
-            // textBox3
+            // txtDogumTarihi
             // 
-            textBox3.Location = new Point(12, 196);
-            textBox3.Name = "textBox3";
-            textBox3.Size = new Size(200, 27);
-            textBox3.TabIndex = 12;
+            txtDogumTarihi.Location = new Point(12, 196);
+            txtDogumTarihi.Name = "txtDogumTarihi";
+            txtDogumTarihi.Size = new Size(200, 27);
+            txtDogumTarihi.TabIndex = 12;
             // 
-            // textBox4
+            // txtMemleket
             // 
-            textBox4.Location = new Point(12, 264);
-            textBox4.Name = "textBox4";
-            textBox4.Size = new Size(200, 27);
-            textBox4.TabIndex = 13;
+            txtMemleket.Location = new Point(12, 264);
+            txtMemleket.Name = "txtMemleket";
+            txtMemleket.Size = new Size(200, 27);
+            txtMemleket.TabIndex = 13;
             // 
-            // textBox5
+            // txtIletisim
             // 
-            textBox5.Location = new Point(12, 331);
-            textBox5.Name = "textBox5";
-            textBox5.Size = new Size(200, 27);
-            textBox5.TabIndex = 14;
+            txtIletisim.Location = new Point(12, 331);
+            txtIletisim.Name = "txtIletisim";
+            txtIletisim.Size = new Size(200, 27);
+            txtIletisim.TabIndex = 14;
             // 
-            // textBox6
+            // txtDepartment
             // 
-            textBox6.Location = new Point(12, 395);
-            textBox6.Name = "textBox6";
-            textBox6.Size = new Size(200, 27);
-            textBox6.TabIndex = 15;
+            txtDepartment.Location = new Point(12, 395);
+            txtDepartment.Name = "txtDepartment";
+            txtDepartment.Size = new Size(200, 27);
+            txtDepartment.TabIndex = 15;
             // 
             // button1
             // 
@@ -170,27 +170,27 @@
             label8.TabIndex = 17;
             label8.Text = "Şifrenizi giriniz:";
             // 
-            // textBox7
+            // txtParola
             // 
-            textBox7.Location = new Point(12, 462);
-            textBox7.Name = "textBox7";
-            textBox7.Size = new Size(200, 27);
-            textBox7.TabIndex = 18;
+            txtParola.Location = new Point(12, 462);
+            txtParola.Name = "txtParola";
+            txtParola.Size = new Size(200, 27);
+            txtParola.TabIndex = 18;
             // 
             // AkademisyenEklemeForm
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(877, 518);
-            Controls.Add(textBox7);
+            Controls.Add(txtParola);
             Controls.Add(label8);
             Controls.Add(button1);
-            Controls.Add(textBox6);
-            Controls.Add(textBox5);
-            Controls.Add(textBox4);
-            Controls.Add(textBox3);
-            Controls.Add(textBox2);
-            Controls.Add(textBox1);
+            Controls.Add(txtDepartment);
+            Controls.Add(txtIletisim);
+            Controls.Add(txtMemleket);
+            Controls.Add(txtDogumTarihi);
+            Controls.Add(txtSoyad);
+            Controls.Add(txtAd);
             Controls.Add(label7);
             Controls.Add(label6);
             Controls.Add(label5);
@@ -213,14 +213,14 @@
         private Label label5;
         private Label label6;
         private Label label7;
-        private TextBox textBox1;
-        private TextBox textBox2;
-        private TextBox textBox3;
-        private TextBox textBox4;
-        private TextBox textBox5;
-        private TextBox textBox6;
+        private TextBox txtAd;
+        private TextBox txtSoyad;
+        private TextBox txtDogumTarihi;
+        private TextBox txtMemleket;
+        private TextBox txtIletisim;
+        private TextBox txtDepartment;
         private Button button1;
         private Label label8;
-        private TextBox textBox7;
+        private TextBox txtParola;
     }
 }

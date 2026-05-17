@@ -23,11 +23,11 @@ namespace windowsAppCsharpOgrenciIsleriProgrami
         }
         public void add()
         {
-            string sql = "Insert into Ogrenci (Name,Surname,Age,Hometown,StudentNumber,Password) values (@Name,@Surname,@Age,@Hometown,@StudentNumber,@Password)";
+            string sql = "Insert into Ogrenci (Name,Surname,Birthdate,Hometown,StudentNumber,Password) values (@Name,@Surname,@Birthdate,@Hometown,@StudentNumber,@Password)";
             command = new SqlCommand(sql, contact);
             command.Parameters.AddWithValue("@Name", txtAd.Text);
             command.Parameters.AddWithValue("@Surname", txtSoyad.Text);
-            command.Parameters.AddWithValue("@Age", txtYas.Text);
+            command.Parameters.AddWithValue("@Birthdate", txtDogumTarihi.Text);
             command.Parameters.AddWithValue("@Hometown", txtMemleket.Text);
             command.Parameters.AddWithValue("@StudentNumber", txtNumara.Text);
             command.Parameters.AddWithValue("@Password", txtParola.Text);
