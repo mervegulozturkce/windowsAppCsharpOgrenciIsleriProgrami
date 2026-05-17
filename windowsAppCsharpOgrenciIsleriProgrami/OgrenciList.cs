@@ -61,6 +61,37 @@ namespace windowsAppCsharpOgrenciIsleriProgrami
                 form4.ShowDialog();
             }
         }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            if (studentList.CurrentRow != null)
+            {
+                int ogrenciId = (int)studentList.CurrentRow.Cells["studentList_Id"].Value;
+                string sql = "DELETE FROM Ogrenci WHERE Id=@ogrenciId";
+
+                deleteFromResults(ogrenciId);
+
+                SqlCommand command = new SqlCommand(sql, contact);
+                command.Parameters.AddWithValue("@ogrenciId", ogrenciId);
+                contact.Open();
+                command.ExecuteNonQuery();
+                contact.Close();
+
+                MessageBox.Show("Öðrenci baþarýyla silindi.");
+            }
+        }
+        public void deleteFromResults(int ogrenciId)
+        {
+            if (studentList.CurrentRow != null)
+            {
+                string sql = "DELETE FROM Results WHERE StudentId=@ogrenciId";
+                SqlCommand command = new SqlCommand(sql, contact);
+                command.Parameters.AddWithValue("@ogrenciId", ogrenciId);
+                contact.Open();
+                command.ExecuteNonQuery();
+                contact.Close();
+            }
+        }
     }
 }
 

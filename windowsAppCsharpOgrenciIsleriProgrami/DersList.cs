@@ -69,9 +69,8 @@ namespace windowsAppCsharpOgrenciIsleriProgrami
                 int dersId = (int)classList.CurrentRow.Cells["classList_Id"].Value;
                 string sql = "DELETE FROM Class WHERE Id=@dersId";
 
-                deleteFromResults();
-                deleteTheExceptOnes();
-
+                deleteFromResults(dersId);
+               
                 SqlCommand command = new SqlCommand(sql, contact);
                 command.Parameters.AddWithValue("@dersId", dersId);
                 contact.Open();
@@ -82,11 +81,10 @@ namespace windowsAppCsharpOgrenciIsleriProgrami
             }
         }
 
-        public void deleteFromResults()
+        public void deleteFromResults(int dersId)
         {
             if (classList.CurrentRow != null)
             {
-                int dersId = (int)classList.CurrentRow.Cells["classList_Id"].Value;
                 string sql = "DELETE FROM Results WHERE ClassId=@dersId";
                 SqlCommand command = new SqlCommand(sql, contact);
                 command.Parameters.AddWithValue("@dersId", dersId);
@@ -96,14 +94,7 @@ namespace windowsAppCsharpOgrenciIsleriProgrami
             }
         }
 
-        public void deleteTheExceptOnes()
-        {
-            string sql = "DELETE FROM Results WHERE ClassId NOT IN (SELECT Id FROM Class)";
-            SqlCommand command = new SqlCommand(sql, contact);
-            contact.Open();
-            command.ExecuteNonQuery();
-            contact.Close();
-        }
+      
 
         private void DersList_FormClosed(object sender, FormClosedEventArgs e)
         {

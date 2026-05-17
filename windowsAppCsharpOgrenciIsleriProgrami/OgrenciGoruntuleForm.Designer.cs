@@ -40,7 +40,6 @@
             txtDogumTarihi = new TextBox();
             txtAd = new TextBox();
             button1 = new Button();
-            button2 = new Button();
             panel1 = new Panel();
             panel1.SuspendLayout();
             SuspendLayout();
@@ -137,7 +136,7 @@
             // 
             // button1
             // 
-            button1.Location = new Point(36, 10);
+            button1.Location = new Point(124, 10);
             button1.Name = "button1";
             button1.Size = new Size(118, 30);
             button1.TabIndex = 17;
@@ -145,19 +144,8 @@
             button1.UseVisualStyleBackColor = true;
             button1.Click += button1_Click;
             // 
-            // button2
-            // 
-            button2.Location = new Point(207, 10);
-            button2.Name = "button2";
-            button2.Size = new Size(118, 30);
-            button2.TabIndex = 18;
-            button2.Text = "Sil";
-            button2.UseVisualStyleBackColor = true;
-            button2.Click += button2_Click;
-            // 
             // panel1
             // 
-            panel1.Controls.Add(button2);
             panel1.Controls.Add(button1);
             panel1.Dock = DockStyle.Bottom;
             panel1.Location = new Point(0, 380);
@@ -203,7 +191,6 @@
         private TextBox txtDogumTarihi;
         private TextBox txtAd;
         private Button button1;
-        private Button button2;
         private Panel panel1;
     }
 }

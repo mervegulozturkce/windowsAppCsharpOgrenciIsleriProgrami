@@ -39,12 +39,14 @@
             studentList_Surname = new DataGridViewTextBoxColumn();
             studentList_Birthdate = new DataGridViewTextBoxColumn();
             studentList_Hometown = new DataGridViewTextBoxColumn();
+            button4 = new Button();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)studentList).BeginInit();
             SuspendLayout();
             // 
             // panel1
             // 
+            panel1.Controls.Add(button4);
             panel1.Controls.Add(button3);
             panel1.Controls.Add(button2);
             panel1.Controls.Add(button1);
@@ -154,6 +156,16 @@
             studentList_Hometown.ReadOnly = true;
             studentList_Hometown.Width = 125;
             // 
+            // button4
+            // 
+            button4.Location = new Point(492, 18);
+            button4.Name = "button4";
+            button4.Size = new Size(154, 30);
+            button4.TabIndex = 10;
+            button4.Text = "Öğrenci Sil";
+            button4.UseVisualStyleBackColor = true;
+            button4.Click += button4_Click;
+            // 
             // OgrenciList
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
@@ -182,5 +194,6 @@
         private DataGridViewTextBoxColumn studentList_Surname;
         private DataGridViewTextBoxColumn studentList_Birthdate;
         private DataGridViewTextBoxColumn studentList_Hometown;
+        private Button button4;
     }
 }
