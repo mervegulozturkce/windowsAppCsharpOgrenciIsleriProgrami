@@ -19,10 +19,10 @@ namespace windowsAppCsharpOgrenciIsleriProgrami
 
         DersList dersList;
         OgrenciList ogrenciList;
-        AkademisyenSifreDegistirForm akademisyenSifreDegistirForm;
+        AkademisyenGuncellemeForm akademisyenGuncellemeForm;
 
         string _username;
-       
+
         int Id;
         public AnaEkranForm(string username)
         {
@@ -49,7 +49,7 @@ namespace windowsAppCsharpOgrenciIsleriProgrami
 
             }
         }
-        private void şifreGüncelleToolStripMenuItem_Click(object sender, EventArgs e)
+        private void bilgiGüncellemeToolStripMenuItem_Click(object sender, EventArgs e)
         {
             int Id = 0;
 
@@ -62,16 +62,16 @@ namespace windowsAppCsharpOgrenciIsleriProgrami
 
                 object result = command.ExecuteScalar();
                 if (result != null)
-                    Id = Convert.ToInt32(result);       
+                    Id = Convert.ToInt32(result);
 
                 contact.Close();
             }
 
-            if (akademisyenSifreDegistirForm == null || akademisyenSifreDegistirForm.IsDisposed)
+            if (akademisyenGuncellemeForm == null || akademisyenGuncellemeForm.IsDisposed)
             {
-                akademisyenSifreDegistirForm = new AkademisyenSifreDegistirForm(Id);
-                akademisyenSifreDegistirForm.MdiParent = this;
-                akademisyenSifreDegistirForm.Show();
+                akademisyenGuncellemeForm = new AkademisyenGuncellemeForm(Id);
+                akademisyenGuncellemeForm.MdiParent = this;
+                akademisyenGuncellemeForm.Show();
             }
         }
     }

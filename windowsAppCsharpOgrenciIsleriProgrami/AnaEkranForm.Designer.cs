@@ -31,14 +31,14 @@
             menuStrip1 = new MenuStrip();
             menuOgrenciList = new ToolStripMenuItem();
             menuDersList = new ToolStripMenuItem();
-            SifreGuncelleMenuItem = new ToolStripMenuItem();
+            bilgiGüncellemeToolStripMenuItem = new ToolStripMenuItem();
             menuStrip1.SuspendLayout();
             SuspendLayout();
             // 
             // menuStrip1
             // 
             menuStrip1.ImageScalingSize = new Size(20, 20);
-            menuStrip1.Items.AddRange(new ToolStripItem[] { menuOgrenciList, menuDersList, SifreGuncelleMenuItem });
+            menuStrip1.Items.AddRange(new ToolStripItem[] { menuOgrenciList, menuDersList, bilgiGüncellemeToolStripMenuItem });
             menuStrip1.Location = new Point(0, 0);
             menuStrip1.Name = "menuStrip1";
             menuStrip1.Size = new Size(800, 28);
@@ -59,12 +59,12 @@
             menuDersList.Text = "Ders Listesi";
             menuDersList.Click += menuDersList_Click;
             // 
-            // SifreGuncelleMenuItem
+            // bilgiGüncellemeToolStripMenuItem
             // 
-            SifreGuncelleMenuItem.Name = "SifreGuncelleMenuItem";
-            SifreGuncelleMenuItem.Size = new Size(114, 24);
-            SifreGuncelleMenuItem.Text = "Şifre Güncelle";
-            SifreGuncelleMenuItem.Click += şifreGüncelleToolStripMenuItem_Click;
+            bilgiGüncellemeToolStripMenuItem.Name = "bilgiGüncellemeToolStripMenuItem";
+            bilgiGüncellemeToolStripMenuItem.Size = new Size(135, 24);
+            bilgiGüncellemeToolStripMenuItem.Text = "Bilgi Güncelleme";
+            bilgiGüncellemeToolStripMenuItem.Click += bilgiGüncellemeToolStripMenuItem_Click;
             // 
             // AnaEkranForm
             // 
@@ -87,6 +87,6 @@
         private MenuStrip menuStrip1;
         private ToolStripMenuItem menuOgrenciList;
         private ToolStripMenuItem menuDersList;
-        private ToolStripMenuItem SifreGuncelleMenuItem;
+        private ToolStripMenuItem bilgiGüncellemeToolStripMenuItem;
     }
 }

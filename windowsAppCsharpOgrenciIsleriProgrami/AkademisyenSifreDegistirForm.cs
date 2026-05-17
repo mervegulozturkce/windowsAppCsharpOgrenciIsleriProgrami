@@ -9,6 +9,9 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
+
+//bu kısım şimdilik kullanılmıyor.
+
 namespace windowsAppCsharpOgrenciIsleriProgrami
 {
     public partial class AkademisyenSifreDegistirForm : Form

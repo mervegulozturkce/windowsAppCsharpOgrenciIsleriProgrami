@@ -158,7 +158,6 @@ namespace windowsAppCsharpOgrenciIsleriProgrami
 
 // linklabeldan giridiğin öğrenci akademisyen kısmındaki öğrenci ekleyi kaldrı yani öğrenciyi sadece akademikler ekelsin
 
-//gitteki olaylara bak
-// git düzenini  prpje hakkındaki  bilgileri yaz
-// gitini public tarzı bişey vrdı ayarlardsan ponu yap
-// akşam git linkini hocaya pushla:))
+
+// akademisyen kendi bilgilerini güncellerekn şifres güncellesin ve diğer şifre güncellemyi kaldırırym??
+//linklabell???
