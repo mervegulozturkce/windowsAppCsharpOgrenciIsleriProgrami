@@ -180,7 +180,7 @@
             Controls.Add(label10);
             FormBorderStyle = FormBorderStyle.FixedDialog;
             Name = "NotEkleForm";
-            Text = "NotEkleForm";
+            Text = "Not Güncelleme";
             Load += NotEkleForm_Load;
             ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
             panel1.ResumeLayout(false);

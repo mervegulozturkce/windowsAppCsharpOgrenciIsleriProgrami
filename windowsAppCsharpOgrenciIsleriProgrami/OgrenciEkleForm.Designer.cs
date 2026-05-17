@@ -192,7 +192,7 @@
             Controls.Add(label1);
             FormBorderStyle = FormBorderStyle.FixedDialog;
             Name = "OgrenciEkleForm";
-            Text = "OgrenciEkleForm";
+            Text = "Öğrenci Ekleme";
             panel1.ResumeLayout(false);
             ResumeLayout(false);
             PerformLayout();

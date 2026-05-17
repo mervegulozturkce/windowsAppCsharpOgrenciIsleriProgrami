@@ -46,6 +46,7 @@
             label4 = new Label();
             label3 = new Label();
             panel1 = new Panel();
+            label11 = new Label();
             panel1.SuspendLayout();
             SuspendLayout();
             // 
@@ -94,7 +95,7 @@
             // label10
             // 
             label10.AutoSize = true;
-            label10.Location = new Point(507, 376);
+            label10.Location = new Point(507, 369);
             label10.Name = "label10";
             label10.Size = new Size(297, 20);
             label10.TabIndex = 28;
@@ -103,7 +104,7 @@
             // label9
             // 
             label9.AutoSize = true;
-            label9.Location = new Point(512, 307);
+            label9.Location = new Point(512, 312);
             label9.Name = "label9";
             label9.Size = new Size(297, 20);
             label9.TabIndex = 27;
@@ -112,7 +113,7 @@
             // label8
             // 
             label8.AutoSize = true;
-            label8.Location = new Point(508, 239);
+            label8.Location = new Point(508, 232);
             label8.Name = "label8";
             label8.Size = new Size(297, 20);
             label8.TabIndex = 26;
@@ -121,7 +122,7 @@
             // label7
             // 
             label7.AutoSize = true;
-            label7.Location = new Point(513, 174);
+            label7.Location = new Point(513, 167);
             label7.Name = "label7";
             label7.Size = new Size(297, 20);
             label7.TabIndex = 25;
@@ -129,7 +130,7 @@
             // 
             // txtQuiz
             // 
-            txtQuiz.Location = new Point(12, 399);
+            txtQuiz.Location = new Point(12, 392);
             txtQuiz.Name = "txtQuiz";
             txtQuiz.ReadOnly = true;
             txtQuiz.Size = new Size(214, 27);
@@ -137,21 +138,21 @@
             // 
             // txtOdev
             // 
-            txtOdev.Location = new Point(12, 330);
+            txtOdev.Location = new Point(12, 335);
             txtOdev.Name = "txtOdev";
             txtOdev.Size = new Size(214, 27);
             txtOdev.TabIndex = 23;
             // 
             // txtFinal
             // 
-            txtFinal.Location = new Point(12, 262);
+            txtFinal.Location = new Point(12, 275);
             txtFinal.Name = "txtFinal";
             txtFinal.Size = new Size(214, 27);
             txtFinal.TabIndex = 22;
             // 
             // txtVize
             // 
-            txtVize.Location = new Point(12, 197);
+            txtVize.Location = new Point(12, 190);
             txtVize.Name = "txtVize";
             txtVize.Size = new Size(214, 27);
             txtVize.TabIndex = 21;
@@ -159,7 +160,7 @@
             // label6
             // 
             label6.AutoSize = true;
-            label6.Location = new Point(12, 376);
+            label6.Location = new Point(12, 369);
             label6.Name = "label6";
             label6.Size = new Size(489, 20);
             label6.TabIndex = 20;
@@ -168,7 +169,7 @@
             // label5
             // 
             label5.AutoSize = true;
-            label5.Location = new Point(12, 307);
+            label5.Location = new Point(12, 312);
             label5.Name = "label5";
             label5.Size = new Size(494, 20);
             label5.TabIndex = 19;
@@ -177,7 +178,7 @@
             // label4
             // 
             label4.AutoSize = true;
-            label4.Location = new Point(12, 239);
+            label4.Location = new Point(12, 232);
             label4.Name = "label4";
             label4.Size = new Size(490, 20);
             label4.TabIndex = 18;
@@ -186,7 +187,7 @@
             // label3
             // 
             label3.AutoSize = true;
-            label3.Location = new Point(12, 174);
+            label3.Location = new Point(12, 167);
             label3.Name = "label3";
             label3.Size = new Size(495, 20);
             label3.TabIndex = 17;
@@ -196,16 +197,26 @@
             // 
             panel1.Controls.Add(button1);
             panel1.Dock = DockStyle.Bottom;
-            panel1.Location = new Point(0, 435);
+            panel1.Location = new Point(0, 423);
             panel1.Name = "panel1";
             panel1.Size = new Size(825, 52);
             panel1.TabIndex = 29;
+            // 
+            // label11
+            // 
+            label11.AutoSize = true;
+            label11.Location = new Point(12, 252);
+            label11.Name = "label11";
+            label11.Size = new Size(297, 20);
+            label11.TabIndex = 30;
+            label11.Text = "(Rakamlarla, sadece sayıyı yazmanız yeterli)";
             // 
             // DersGoruntuleForm
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(825, 487);
+            ClientSize = new Size(825, 475);
+            Controls.Add(label11);
             Controls.Add(panel1);
             Controls.Add(label10);
             Controls.Add(label9);
@@ -225,7 +236,7 @@
             Controls.Add(label1);
             FormBorderStyle = FormBorderStyle.FixedDialog;
             Name = "DersGoruntuleForm";
-            Text = "DersGoruntuleForm";
+            Text = "Ders Güncelle";
             panel1.ResumeLayout(false);
             ResumeLayout(false);
             PerformLayout();
@@ -257,5 +268,6 @@
         private TextBox txtFinal;
         private TextBox txtVize;
         private Panel panel1;
+        private Label label11;
     }
 }

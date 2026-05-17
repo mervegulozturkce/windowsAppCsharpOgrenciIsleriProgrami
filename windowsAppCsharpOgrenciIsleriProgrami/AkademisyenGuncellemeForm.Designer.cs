@@ -211,7 +211,7 @@
             Controls.Add(label1);
             FormBorderStyle = FormBorderStyle.FixedDialog;
             Name = "AkademisyenGuncellemeForm";
-            Text = "AkademisyenGuncellemeForm";
+            Text = "Akademisyen Güncelle";
             panel1.ResumeLayout(false);
             ResumeLayout(false);
             PerformLayout();

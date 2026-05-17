@@ -101,7 +101,7 @@
             Controls.Add(label1);
             FormBorderStyle = FormBorderStyle.FixedDialog;
             Name = "OgrenciSifreDegistirForm";
-            Text = "SifreDegistirForm";
+            Text = "Şifre Güncelleme";
             panel1.ResumeLayout(false);
             ResumeLayout(false);
             PerformLayout();

@@ -67,13 +67,14 @@
             dataGridView1.AllowUserToDeleteRows = false;
             dataGridView1.AllowUserToResizeColumns = false;
             dataGridView1.AllowUserToResizeRows = false;
+            dataGridView1.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dataGridView1.Columns.AddRange(new DataGridViewColumn[] { ResultsList_ClassName, ResultsList_ClassCode, ResultsList_Id, ResultsList_Midterm, ResultsList_Finals, ResultsList_Homeworks, ResultsList_Quiz, ResultsList_MakeUp, ResultsList_TermGrade });
             dataGridView1.Location = new Point(12, 45);
             dataGridView1.Name = "dataGridView1";
             dataGridView1.ReadOnly = true;
             dataGridView1.RowHeadersWidth = 51;
-            dataGridView1.Size = new Size(1054, 351);
+            dataGridView1.Size = new Size(1126, 442);
             dataGridView1.TabIndex = 13;
             // 
             // ResultsList_ClassName
@@ -172,14 +173,13 @@
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1112, 443);
+            ClientSize = new Size(1150, 499);
             Controls.Add(button1);
             Controls.Add(dataGridView1);
             Controls.Add(txtAdSoyad);
             Controls.Add(label10);
-            FormBorderStyle = FormBorderStyle.FixedDialog;
             Name = "NotGoruntulemeForm";
-            Text = "NotGoruntulemeForm";
+            Text = "Not Görüntüleme";
             Load += NotGoruntulemeForm_Load;
             ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
             ResumeLayout(false);

@@ -42,6 +42,7 @@
             // 
             classList.AllowUserToAddRows = false;
             classList.AllowUserToDeleteRows = false;
+            classList.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             classList.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             classList.Columns.AddRange(new DataGridViewColumn[] { classList_Id, classList_Name, classList_Code });
             classList.Location = new Point(12, 55);
@@ -119,9 +120,8 @@
             Controls.Add(button2);
             Controls.Add(button1);
             Controls.Add(classList);
-            FormBorderStyle = FormBorderStyle.FixedDialog;
             Name = "DersList";
-            Text = "DersList";
+            Text = "Ders Listesi";
             FormClosed += DersList_FormClosed;
             Load += DersList_Load;
             ((System.ComponentModel.ISupportInitialize)classList).EndInit();

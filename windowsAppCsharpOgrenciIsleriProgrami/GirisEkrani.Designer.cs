@@ -104,7 +104,6 @@
             FormBorderStyle = FormBorderStyle.FixedDialog;
             MaximizeBox = false;
             Name = "GirisEkrani";
-            Text = "GirisEkrani";
             ResumeLayout(false);
             PerformLayout();
         }

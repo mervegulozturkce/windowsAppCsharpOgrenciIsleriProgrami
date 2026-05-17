@@ -210,7 +210,7 @@
             Controls.Add(label2);
             FormBorderStyle = FormBorderStyle.FixedDialog;
             Name = "AkademisyenEklemeForm";
-            Text = "AkademisyenEklemeForm";
+            Text = "Akademisyen Ekle";
             panel1.ResumeLayout(false);
             ResumeLayout(false);
             PerformLayout();

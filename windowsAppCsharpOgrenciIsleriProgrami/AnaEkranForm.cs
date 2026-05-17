@@ -20,6 +20,8 @@ namespace windowsAppCsharpOgrenciIsleriProgrami
         DersList dersList;
         OgrenciList ogrenciList;
         AkademisyenGuncellemeForm akademisyenGuncellemeForm;
+        AkademisyenEklemeForm akademisyenEklemeForm;
+
 
         string _username;
 
@@ -77,8 +79,12 @@ namespace windowsAppCsharpOgrenciIsleriProgrami
 
         private void akademisyenEkleToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            AkademisyenEklemeForm akademisyenEklemeForm = new AkademisyenEklemeForm();
-            akademisyenEklemeForm.Show();
+            if(akademisyenEklemeForm == null || akademisyenEklemeForm.IsDisposed)
+            {
+                akademisyenEklemeForm = new AkademisyenEklemeForm();
+                akademisyenEklemeForm.MdiParent = this;
+                akademisyenEklemeForm.Show();
+            }            
         }
     }
 }

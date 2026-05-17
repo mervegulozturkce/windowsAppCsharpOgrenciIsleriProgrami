@@ -88,9 +88,9 @@
             // 
             studentList.AllowUserToAddRows = false;
             studentList.AllowUserToDeleteRows = false;
+            studentList.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             studentList.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             studentList.Columns.AddRange(new DataGridViewColumn[] { studentList_Id, studentList_StudentNumber, studentList_Name, studentList_Surname, studentList_Birthdate, studentList_Hometown });
-            studentList.Dock = DockStyle.Left;
             studentList.Location = new Point(0, 62);
             studentList.MultiSelect = false;
             studentList.Name = "studentList";
@@ -161,9 +161,8 @@
             ClientSize = new Size(807, 328);
             Controls.Add(studentList);
             Controls.Add(panel1);
-            FormBorderStyle = FormBorderStyle.FixedDialog;
             Name = "OgrenciList";
-            Text = "OgrenciList";
+            Text = "Ögrenci Listesi";
             Load += AnaEkranForm_Load;
             panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)studentList).EndInit();

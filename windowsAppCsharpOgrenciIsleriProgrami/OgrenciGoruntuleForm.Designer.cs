@@ -184,7 +184,7 @@
             Controls.Add(label2);
             FormBorderStyle = FormBorderStyle.FixedDialog;
             Name = "OgrenciGoruntuleForm";
-            Text = "OgrenciGoruntuleForm";
+            Text = "Ögrenci Güncelle";
             panel1.ResumeLayout(false);
             ResumeLayout(false);
             PerformLayout();

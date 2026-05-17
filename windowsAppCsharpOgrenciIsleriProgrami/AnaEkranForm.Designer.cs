@@ -80,11 +80,10 @@
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
             Controls.Add(menuStrip1);
-            FormBorderStyle = FormBorderStyle.FixedDialog;
             IsMdiContainer = true;
             MainMenuStrip = menuStrip1;
             Name = "AnaEkranForm";
-            Text = "Ana_Ekran";
+            Text = "Öğrenci Bilgi Sistemi";
             menuStrip1.ResumeLayout(false);
             menuStrip1.PerformLayout();
             ResumeLayout(false);

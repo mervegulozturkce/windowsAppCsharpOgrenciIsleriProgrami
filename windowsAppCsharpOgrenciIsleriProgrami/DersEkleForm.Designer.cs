@@ -196,7 +196,7 @@
             // 
             panel1.Controls.Add(button1);
             panel1.Dock = DockStyle.Bottom;
-            panel1.Location = new Point(0, 467);
+            panel1.Location = new Point(0, 425);
             panel1.Name = "panel1";
             panel1.Size = new Size(846, 52);
             panel1.TabIndex = 20;
@@ -205,7 +205,7 @@
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(846, 519);
+            ClientSize = new Size(846, 477);
             Controls.Add(panel1);
             Controls.Add(label11);
             Controls.Add(label10);
@@ -225,7 +225,7 @@
             Controls.Add(label1);
             FormBorderStyle = FormBorderStyle.FixedDialog;
             Name = "DersEkleForm";
-            Text = "DersEkleForm";
+            Text = "Ders Ekle";
             panel1.ResumeLayout(false);
             ResumeLayout(false);
             PerformLayout();
